@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -10,16 +12,64 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="G_Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1B-CC-ahr" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="59" width="393" height="499"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlC-dk-TAM">
+                                <rect key="frame" x="50" y="658" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Hds-nX-yVX"/>
+                                    <constraint firstAttribute="width" constant="100" id="x20-B8-gcN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start">
+                                    <backgroundConfiguration key="background" cornerRadius="10"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ifj-Pc-5Wa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8d-3X-g5e">
+                                <rect key="frame" x="243" y="658" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1MG-dS-oXt"/>
+                                    <constraint firstAttribute="height" constant="40" id="y3b-Mw-Qf6"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Stop">
+                                    <backgroundConfiguration key="background" cornerRadius="10"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="stopButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lvT-qd-4LX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YlC-dk-TAM" firstAttribute="top" secondItem="U1B-CC-ahr" secondAttribute="bottom" constant="100" id="8Vf-Za-TOk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m8d-3X-g5e" secondAttribute="trailing" constant="50" id="G3J-4e-qvw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m8d-3X-g5e" secondAttribute="bottom" constant="120" id="HTf-cN-Ocw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YlC-dk-TAM" secondAttribute="bottom" constant="120" id="RsK-LP-fCk"/>
+                            <constraint firstItem="U1B-CC-ahr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mHT-BN-Kxx"/>
+                            <constraint firstItem="U1B-CC-ahr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vZg-A7-A1Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U1B-CC-ahr" secondAttribute="trailing" id="wX4-s9-CMk"/>
+                            <constraint firstItem="YlC-dk-TAM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="yd3-2O-gb6"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="U1B-CC-ahr" id="5Eh-5F-ZWE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="45" y="-28"/>
         </scene>
     </scenes>
     <resources>

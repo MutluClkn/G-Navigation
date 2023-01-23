@@ -109,14 +109,6 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		FA865B09297AB4D8008077DA /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				FA865AFF297A9B4B008077DA /* API_Keys.swift */,
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
 		FABDC8022979104700A9B7FA = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +130,7 @@
 		FABDC80D2979104700A9B7FA /* G-Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				FA865B09297AB4D8008077DA /* Constants */,
+				FA865AFF297A9B4B008077DA /* API_Keys.swift */,
 				FA865B06297AB482008077DA /* Resources */,
 				FA865B05297AB452008077DA /* Views */,
 				FA865B04297AB44D008077DA /* Models */,

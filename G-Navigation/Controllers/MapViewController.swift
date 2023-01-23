@@ -14,14 +14,32 @@ import CoreLocation
 //MARK: - MapViewController
 class MapViewController: UIViewController {
     
-    //MARK: - LocationManager
-    let manager = CLLocationManager()
+    //MARK: - Properties
+    @IBOutlet weak var mapView: GMSMapView!
     
+    
+    
+    //-----------------------------
+    //MARK: - Objects
+    //-----------------------------
+    
+    //CLLocation
+    let manager = CLLocationManager()
+    let startLocation = CLLocationCoordinate2D()
+    let finishLocation = CLLocationCoordinate2D()
+    
+    
+    
+    
+    
+    //-----------------------------
     //MARK: - viewDidLoad
+    //-----------------------------
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //GoogleMapsLicense
+        //GoogleMaps
         print("License: \n\n\(GMSServices.openSourceLicenseInfo())")
         
         //CoreLocation
@@ -29,12 +47,18 @@ class MapViewController: UIViewController {
         
     }
     
+
+    
+    //-----------------------------
     //MARK: - Methods
+    //-----------------------------
+    
     //Add Google Maps
     private func addGoogleMaps(lat: CLLocationDegrees, long: CLLocationDegrees){
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 13.0)
-        let mapView = GMSMapView.map(withFrame: view.frame, camera: camera)
-        view.addSubview(mapView)
+        mapView.camera = camera
+        mapView.animate(to: camera)
+        
         
         // Creates a marker in the center of the map.
         let marker = GMSMarker()
@@ -52,15 +76,34 @@ class MapViewController: UIViewController {
         manager.startUpdatingLocation()
         print("Start Updating Location")
     }
+    
+    
+    
+    //-----------------------------
+    //MARK: - Actions
+    //-----------------------------
+    
+    //Start Button
+    @IBAction func startButtonDidPress(_ sender: UIButton) {
+    }
+    
+    //Stop Button
+    @IBAction func stopButtonDidPress(_ sender: UIButton) {
+    }
+    
 }
 
+
+//-----------------------------
 //MARK: - CLLocationManagerDelegate
+//-----------------------------
+
 extension MapViewController: CLLocationManagerDelegate{
     //Did Update Location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        guard let location = locations.first else {
-            print("Error while getting first location!")
+        guard let location = locations.last else {
+            print("Error while getting last location!")
             return
         }
         
@@ -68,6 +111,10 @@ extension MapViewController: CLLocationManagerDelegate{
         print("Coordinates fetched successfully.")
         
         addGoogleMaps(lat: coordinate.latitude, long: coordinate.longitude)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("------FAIL------")
     }
     
 }

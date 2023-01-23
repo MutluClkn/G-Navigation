@@ -6,6 +6,7 @@ target 'G-Navigation' do
   use_frameworks!
 
   # Pods for G-Navigation
-	pod 'GoogleMaps'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 
 end
