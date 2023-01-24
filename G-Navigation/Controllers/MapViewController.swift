@@ -28,7 +28,16 @@ class MapViewController: UIViewController {
     let startLocation = CLLocationCoordinate2D()
     let finishLocation = CLLocationCoordinate2D()
     
+    //Managers
+    let navigationManager = NavigationManager()
+    let directionManager = DirectionManager()
     
+    //Fetched Datas
+    var navigations : NavigationData?
+    var points : String = ""
+    
+    //Location Count
+    var succeedLocations : Int = 0
     
     
     
@@ -40,11 +49,18 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         
         //GoogleMaps
-        print("License: \n\n\(GMSServices.openSourceLicenseInfo())")
+        //print("License: \n\n\(GMSServices.openSourceLicenseInfo())")
         
         //CoreLocation
         configureLocationManager()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //Managers
+        fetchNavigationData()
+        fetchDirectionData()
     }
     
 
@@ -54,27 +70,62 @@ class MapViewController: UIViewController {
     //-----------------------------
     
     //Add Google Maps
-    private func addGoogleMaps(lat: CLLocationDegrees, long: CLLocationDegrees){
-        let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 13.0)
+    private func addGoogleMaps(startCoordinates: CLLocationCoordinate2D, finishCoordinates: CLLocationCoordinate2D){
+        let camera = GMSCameraPosition.camera(withTarget: startCoordinates, zoom: 13.0)
         mapView.camera = camera
         mapView.animate(to: camera)
         
         
         // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        let startMarker = GMSMarker()
+        startMarker.position = CLLocationCoordinate2D(latitude: startCoordinates.latitude, longitude: startCoordinates.longitude)
+        startMarker.title = "Start"
+        startMarker.map = mapView
+        
+        let finishMarker = GMSMarker()
+        finishMarker.position = CLLocationCoordinate2D(latitude: finishCoordinates.latitude, longitude: finishCoordinates.longitude)
+        finishMarker.title = "Finish"
+        finishMarker.map = mapView
+
     }
     
     //Configure Location Manager
     private func configureLocationManager(){
-        manager.delegate = self
+       // manager.delegate = self
         manager.requestAlwaysAuthorization()
         manager.requestWhenInUseAuthorization()
         manager.startUpdatingLocation()
         print("Start Updating Location")
+    }
+    
+    //Fetch Navigation Data
+    private func fetchNavigationData(){
+        navigationManager.performRequest { results in
+            switch results{
+            case.success(let data):
+                self.navigations = data
+            case.failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    //Fetch Direction Data
+    private func fetchDirectionData(){
+        
+        guard let originLat = self.navigations?.user[0].current_location.latitude else { return }
+        guard let originLong = self.navigations?.user[0].current_location.longitude else { return }
+        guard let directionLat = self.navigations?.location[succeedLocations].lat else { return }
+        guard let directionLong = self.navigations?.location[succeedLocations].long else { return }
+        
+        directionManager.performRequest(origin: CLLocationCoordinate2D(latitude: originLat, longitude: originLong), destination: CLLocationCoordinate2D(latitude: directionLat, longitude: directionLong)) { result in
+            switch result {
+            case.success(let direction):
+                self.points = direction
+            case.failure(let error):
+                print(error)
+            }
+        }
     }
     
     
@@ -85,6 +136,23 @@ class MapViewController: UIViewController {
     
     //Start Button
     @IBAction func startButtonDidPress(_ sender: UIButton) {
+        fetchNavigationData()
+        fetchDirectionData()
+        if self.points != "" {
+            let points = self.points
+            let path = GMSPath(fromEncodedPath: points)
+            let polyline = GMSPolyline(path: path)
+            polyline.strokeColor = .systemBlue
+            polyline.strokeWidth = 5
+            polyline.map = self.mapView
+            
+            guard let startLat = self.navigations?.user[0].current_location.latitude else { return }
+            guard let startLong = self.navigations?.user[0].current_location.longitude else { return }
+            guard let finishLat = self.navigations?.location[succeedLocations].lat else { return }
+            guard let finishLong = self.navigations?.location[succeedLocations].long else { return }
+            
+            addGoogleMaps(startCoordinates: CLLocationCoordinate2D(latitude: startLat, longitude: startLong), finishCoordinates: CLLocationCoordinate2D(latitude: finishLat, longitude: finishLong))
+        }
     }
     
     //Stop Button
@@ -93,7 +161,7 @@ class MapViewController: UIViewController {
     
 }
 
-
+/*
 //-----------------------------
 //MARK: - CLLocationManagerDelegate
 //-----------------------------
@@ -110,7 +178,7 @@ extension MapViewController: CLLocationManagerDelegate{
         let coordinate = location.coordinate
         print("Coordinates fetched successfully.")
         
-        addGoogleMaps(lat: coordinate.latitude, long: coordinate.longitude)
+        addGoogleMaps(startCoordinates: coordinate.latitude, finishCoordinates: coordinate.longitude)
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -119,3 +187,4 @@ extension MapViewController: CLLocationManagerDelegate{
     
 }
 
+*/

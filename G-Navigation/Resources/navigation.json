@@ -5,16 +5,16 @@
       "name": "Mutlu",
       "surname": "Çalkan",
       "current_location": {
-        "latitude": 41.031537,
-        "longitude": 28.843296
+        "latitude": 41.03153,
+        "longitude": 28.84329
       }
     },
     {
       "name": "Mete",
       "surname": "Çalkan",
       "current_location": {
-        "latitude": 40.992808,
-        "longitude": 28.845562
+        "latitude": 40.99280,
+        "longitude": 28.84556
       }
     }
   ],
@@ -22,17 +22,17 @@
     {
       "distance": 20.0,
       "lat": 41.00164,
-      "long": 28.884633
+      "long": 28.88463
     },
     {
       "distance": 20.0,
       "lat": 41.02665,
-      "long": 28.926421
+      "long": 28.92642
     },
     {
       "distance": 20.0,
-      "lat": 41.007349,
-      "long": 28.978033
+      "lat": 41.00734,
+      "long": 28.97803
     }
   ]
 }
