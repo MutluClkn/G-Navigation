@@ -20,30 +20,6 @@ struct NavigationManager {
             }catch{
                 completion(.failure(error))
             }
-            
-            
-            /*
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, _, error in
-                if let error {
-                    print(error)
-                    return
-                }
-                if let data {
-                    do{
-                        let decoder = JSONDecoder()
-                        let navigation = try decoder.decode(NavigationData.self, from: data)
-                        print(navigation)
-                        DispatchQueue.main.async {
-                            completion(.success(navigation))
-                        }
-                    }catch{
-                        print("ERROR NAVIGATION MANAGER")
-                        completion(.failure(error))
-                    }
-                }
-            }
-            task.resume()*/
         }
     }
 }

@@ -19,7 +19,6 @@ struct NavigationData : Decodable {
 struct Users : Decodable {
     let name : String
     let surname: String
-    let current_location : CurrentLocations
 }
 
 //MARK: - Locations
@@ -27,10 +26,4 @@ struct Locations : Decodable {
     let distance : Double
     let lat : Double
     let long : Double
-}
-
-//MARK: - CurrentLocations
-struct CurrentLocations : Decodable {
-    let latitude : Double
-    let longitude : Double
 }
