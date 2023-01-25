@@ -16,6 +16,10 @@
 		FA865B00297A9B4B008077DA /* API_Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865AFF297A9B4B008077DA /* API_Keys.swift */; };
 		FA865B0B297AB515008077DA /* NavigationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865B0A297AB515008077DA /* NavigationData.swift */; };
 		FA865B0D297AB60D008077DA /* navigation.json in Resources */ = {isa = PBXBuildFile; fileRef = FA865B0C297AB60D008077DA /* navigation.json */; };
+		FAACFCBE298123A200B779FC /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCBD298123A200B779FC /* FinishViewController.swift */; };
+		FAACFCC02981275100B779FC /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = FAACFCBF2981275100B779FC /* success.json */; };
+		FAACFCC4298128A000B779FC /* SegueConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCC3298128A000B779FC /* SegueConstants.swift */; };
+		FAACFCC629812A0C00B779FC /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCC529812A0C00B779FC /* AnimationConstants.swift */; };
 		FABDC80F2979104700A9B7FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC80E2979104700A9B7FA /* AppDelegate.swift */; };
 		FABDC8112979104700A9B7FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC8102979104700A9B7FA /* SceneDelegate.swift */; };
 		FABDC8132979104700A9B7FA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC8122979104700A9B7FA /* MapViewController.swift */; };
@@ -36,6 +40,10 @@
 		FA865AFF297A9B4B008077DA /* API_Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Keys.swift; sourceTree = "<group>"; };
 		FA865B0A297AB515008077DA /* NavigationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationData.swift; sourceTree = "<group>"; };
 		FA865B0C297AB60D008077DA /* navigation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = navigation.json; sourceTree = "<group>"; };
+		FAACFCBD298123A200B779FC /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
+		FAACFCBF2981275100B779FC /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		FAACFCC3298128A000B779FC /* SegueConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueConstants.swift; sourceTree = "<group>"; };
+		FAACFCC529812A0C00B779FC /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		FABDC80B2979104700A9B7FA /* G-Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Navigation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABDC80E2979104700A9B7FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABDC8102979104700A9B7FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				FABDC8122979104700A9B7FA /* MapViewController.swift */,
+				FAACFCBD298123A200B779FC /* FinishViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -115,6 +124,8 @@
 		FA865B06297AB482008077DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAACFCC22981289500B779FC /* Constants */,
+				FAACFCC12981275500B779FC /* Animations */,
 				FA865B0C297AB60D008077DA /* navigation.json */,
 				FABDC80E2979104700A9B7FA /* AppDelegate.swift */,
 				FABDC8102979104700A9B7FA /* SceneDelegate.swift */,
@@ -129,6 +140,23 @@
 				FABDC8192979104900A9B7FA /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FAACFCC12981275500B779FC /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				FAACFCBF2981275100B779FC /* success.json */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		FAACFCC22981289500B779FC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FAACFCC3298128A000B779FC /* SegueConstants.swift */,
+				FAACFCC529812A0C00B779FC /* AnimationConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		FABDC8022979104700A9B7FA = {
@@ -175,6 +203,7 @@
 				FABDC8082979104700A9B7FA /* Frameworks */,
 				FABDC8092979104700A9B7FA /* Resources */,
 				DAC0BEA39EC769F85B2A978C /* [CP] Copy Pods Resources */,
+				30C351D2704E0CAD271767C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -223,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAACFCC02981275100B779FC /* success.json in Resources */,
 				FABDC81B2979104900A9B7FA /* LaunchScreen.storyboard in Resources */,
 				FABDC8182979104900A9B7FA /* Assets.xcassets in Resources */,
 				FABDC8162979104700A9B7FA /* Main.storyboard in Resources */,
@@ -233,6 +263,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		30C351D2704E0CAD271767C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-G-Navigation/Pods-G-Navigation-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-G-Navigation/Pods-G-Navigation-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-G-Navigation/Pods-G-Navigation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		81B50D7A09583924B60E415F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,9 +333,12 @@
 				FA865B00297A9B4B008077DA /* API_Keys.swift in Sources */,
 				FABDC8112979104700A9B7FA /* SceneDelegate.swift in Sources */,
 				FA277279297FC670009E8267 /* NavigationManager.swift in Sources */,
+				FAACFCC4298128A000B779FC /* SegueConstants.swift in Sources */,
 				FA277274297FC154009E8267 /* DirectionData.swift in Sources */,
 				FA27727D297FE7E4009E8267 /* DistanceData.swift in Sources */,
 				FA277277297FC26A009E8267 /* DirectionManager.swift in Sources */,
+				FAACFCBE298123A200B779FC /* FinishViewController.swift in Sources */,
+				FAACFCC629812A0C00B779FC /* AnimationConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

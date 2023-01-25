@@ -146,6 +146,12 @@ class MapViewController: UIViewController {
         }
     }
     
+    //Prepare For Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == SegueConstants.toFinishVC{
+            let destinationVC = FinishViewController()
+        }
+    }
     
     
     //-----------------------------
@@ -161,6 +167,8 @@ class MapViewController: UIViewController {
     @IBAction func stopButtonDidPress(_ sender: UIButton) {
         manager.stopUpdatingLocation()
         self.mapView.clear()
+        
+        performSegue(withIdentifier: SegueConstants.toFinishVC, sender: nil)
     }
     
 }

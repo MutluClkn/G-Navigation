@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DvD-3c-DV4">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Navigation-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="G_Navigation" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1B-CC-ahr" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="59" width="393" height="499"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="455"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlC-dk-TAM">
@@ -63,16 +63,104 @@
                             <constraint firstItem="YlC-dk-TAM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="yd3-2O-gb6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Navigation" id="JzS-7o-tyG"/>
                     <connections>
                         <outlet property="mapView" destination="U1B-CC-ahr" id="5Eh-5F-ZWE"/>
+                        <segue destination="7Xm-gg-XEH" kind="presentation" identifier="toFinishVC" modalPresentationStyle="fullScreen" id="oDe-CQ-92b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="45" y="-28"/>
+            <point key="canvasLocation" x="970.2290076335878" y="-28.169014084507044"/>
+        </scene>
+        <!--Finish View Controller-->
+        <scene sceneID="ILr-R3-hDC">
+            <objects>
+                <viewController id="7Xm-gg-XEH" customClass="FinishViewController" customModule="G_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L84-9V-sEJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrulations! You completed all the destinations." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IQ-CS-vh4">
+                                <rect key="frame" x="20" y="129" width="353" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmV-aJ-TV1" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="20" y="197.33333333333337" width="353" height="400"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="t4I-1H-p2r"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yKW-Kh-OLq">
+                                <rect key="frame" x="146.66666666666666" y="647.33333333333337" width="100" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="D5H-YE-STk"/>
+                                    <constraint firstAttribute="width" constant="100" id="bml-m6-y4o"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Restart">
+                                    <backgroundConfiguration key="background" cornerRadius="10"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="restartButtonDidPress:" destination="7Xm-gg-XEH" eventType="touchUpInside" id="6I9-EV-I5X"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4GH-3r-b3Y"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9IQ-CS-vh4" firstAttribute="top" secondItem="4GH-3r-b3Y" secondAttribute="top" constant="70" id="9hI-dh-84u"/>
+                            <constraint firstItem="yKW-Kh-OLq" firstAttribute="top" secondItem="WmV-aJ-TV1" secondAttribute="bottom" constant="50" id="VN7-iO-Icn"/>
+                            <constraint firstItem="yKW-Kh-OLq" firstAttribute="centerX" secondItem="L84-9V-sEJ" secondAttribute="centerX" id="Wev-p9-t9m"/>
+                            <constraint firstItem="WmV-aJ-TV1" firstAttribute="leading" secondItem="4GH-3r-b3Y" secondAttribute="leading" constant="20" id="Zws-er-FJH"/>
+                            <constraint firstItem="4GH-3r-b3Y" firstAttribute="trailing" secondItem="WmV-aJ-TV1" secondAttribute="trailing" constant="20" id="ayd-X1-TeU"/>
+                            <constraint firstItem="9IQ-CS-vh4" firstAttribute="leading" secondItem="4GH-3r-b3Y" secondAttribute="leading" constant="20" id="bl1-7P-wwV"/>
+                            <constraint firstItem="WmV-aJ-TV1" firstAttribute="top" secondItem="9IQ-CS-vh4" secondAttribute="bottom" constant="30" id="u5I-ie-E2q"/>
+                            <constraint firstItem="4GH-3r-b3Y" firstAttribute="trailing" secondItem="9IQ-CS-vh4" secondAttribute="trailing" constant="20" id="xPl-cD-gdQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9V8-B7-Sp5"/>
+                    <connections>
+                        <outlet property="successAnimation" destination="WmV-aJ-TV1" id="tjA-AQ-73b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bDA-6a-aMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1867.9389312977098" y="-28.169014084507044"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3nk-lk-X3H">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DvD-3c-DV4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pmd-fi-RZA">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="iSr-Tr-xg2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xf1-QM-LhP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="43.511450381679388" y="-28.169014084507044"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="WmV-aJ-TV1"/>
+    </designables>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

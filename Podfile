@@ -6,7 +6,11 @@ target 'G-Navigation' do
   use_frameworks!
 
   # Pods for G-Navigation
+  # GoogleMaps
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-
+  
+  # Lottie
+  pod 'lottie-ios'
+  
 end
