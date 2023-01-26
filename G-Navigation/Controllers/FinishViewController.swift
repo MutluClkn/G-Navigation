@@ -5,12 +5,18 @@
 //  Created by Mutlu Çalkan on 25.01.2023.
 //
 
+//MARK: - Frameworks
 import UIKit
 import Lottie
 
-class FinishViewController: UIViewController {
+//MARK: - FinishViewController
+final class FinishViewController: UIViewController {
 
     @IBOutlet weak var successAnimation: LottieAnimationView!
+    
+    //-----------------------------
+    //MARK: - Lifecycle
+    //-----------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +27,11 @@ class FinishViewController: UIViewController {
         successAnimationConfiraguration(AnimationConstants.successName)
     }
 
+    
+    //-----------------------------
+    //MARK: - Methods
+    //-----------------------------
+    
     private func successAnimationConfiraguration(_ name: String){
         successAnimation.animation = .named(name)
         successAnimation.backgroundColor = .systemBackground

@@ -18,70 +18,101 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1B-CC-ahr" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="103" width="393" height="455"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="665"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlC-dk-TAM">
-                                <rect key="frame" x="50" y="658" width="100" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtS-OP-0Sd">
+                                <rect key="frame" x="121.66666666666669" y="773" width="150" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Hds-nX-yVX"/>
-                                    <constraint firstAttribute="width" constant="100" id="x20-B8-gcN"/>
+                                    <constraint firstAttribute="width" constant="150" id="blt-rb-15c"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Start">
-                                    <backgroundConfiguration key="background" cornerRadius="10"/>
-                                </buttonConfiguration>
+                                <buttonConfiguration key="configuration" style="plain" title="Google License"/>
                                 <connections>
-                                    <action selector="startButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ifj-Pc-5Wa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8d-3X-g5e">
-                                <rect key="frame" x="243" y="658" width="100" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="1MG-dS-oXt"/>
-                                    <constraint firstAttribute="height" constant="40" id="y3b-Mw-Qf6"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Stop">
-                                    <backgroundConfiguration key="background" cornerRadius="10"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="stopButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lvT-qd-4LX"/>
+                                    <action selector="googleLicenseButtonDidPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1dI-RD-rMj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YlC-dk-TAM" firstAttribute="top" secondItem="U1B-CC-ahr" secondAttribute="bottom" constant="100" id="8Vf-Za-TOk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m8d-3X-g5e" secondAttribute="trailing" constant="50" id="G3J-4e-qvw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="m8d-3X-g5e" secondAttribute="bottom" constant="120" id="HTf-cN-Ocw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YlC-dk-TAM" secondAttribute="bottom" constant="120" id="RsK-LP-fCk"/>
+                            <constraint firstItem="mtS-OP-0Sd" firstAttribute="top" secondItem="U1B-CC-ahr" secondAttribute="bottom" constant="5" id="Geu-Po-HuH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="U1B-CC-ahr" secondAttribute="bottom" constant="50" id="KFx-yl-xKK"/>
                             <constraint firstItem="U1B-CC-ahr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mHT-BN-Kxx"/>
                             <constraint firstItem="U1B-CC-ahr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vZg-A7-A1Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="U1B-CC-ahr" secondAttribute="trailing" id="wX4-s9-CMk"/>
-                            <constraint firstItem="YlC-dk-TAM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="yd3-2O-gb6"/>
+                            <constraint firstItem="mtS-OP-0Sd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wgy-Fg-x0U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mtS-OP-0Sd" secondAttribute="bottom" id="zZm-7l-hbH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Navigation" id="JzS-7o-tyG"/>
+                    <navigationItem key="navigationItem" title="Navigation" id="JzS-7o-tyG">
+                        <barButtonItem key="leftBarButtonItem" title="Stop" style="done" id="foa-08-lmT">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="stopBarButtonDidPress:" destination="BYZ-38-t0r" id="fXr-a0-jqz"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Start" style="done" id="ske-9y-pHj">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <action selector="startBarButtonDidPress:" destination="BYZ-38-t0r" id="D9H-0N-vpX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="U1B-CC-ahr" id="5Eh-5F-ZWE"/>
-                        <segue destination="7Xm-gg-XEH" kind="presentation" identifier="toFinishVC" modalPresentationStyle="fullScreen" id="oDe-CQ-92b"/>
+                        <segue destination="DRc-Fw-gPk" kind="show" identifier="toLicenseVC" id="1RC-Zq-ykd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="970.2290076335878" y="-28.169014084507044"/>
         </scene>
+        <!--License View Controller-->
+        <scene sceneID="Cdz-MB-BO5">
+            <objects>
+                <viewController storyboardIdentifier="licenseVC" id="DRc-Fw-gPk" customClass="LicenseViewController" customModule="G_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1fI-W1-L4B">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7W2-vp-HWc">
+                                <rect key="frame" x="5" y="103" width="383" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2Wa-6s-UcV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2Wa-6s-UcV" firstAttribute="bottom" secondItem="7W2-vp-HWc" secondAttribute="bottom" id="5Y4-sd-cUg"/>
+                            <constraint firstItem="7W2-vp-HWc" firstAttribute="top" secondItem="2Wa-6s-UcV" secondAttribute="top" id="78U-Bt-5xr"/>
+                            <constraint firstItem="7W2-vp-HWc" firstAttribute="leading" secondItem="2Wa-6s-UcV" secondAttribute="leading" constant="5" id="bad-Vn-WOj"/>
+                            <constraint firstItem="2Wa-6s-UcV" firstAttribute="trailing" secondItem="7W2-vp-HWc" secondAttribute="trailing" constant="5" id="i4P-sb-5dc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Dm-MA-Vcx"/>
+                    <connections>
+                        <outlet property="licenseTextView" destination="7W2-vp-HWc" id="a8A-Nb-RZz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFl-f9-sOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1862" y="430"/>
+        </scene>
         <!--Finish View Controller-->
         <scene sceneID="ILr-R3-hDC">
             <objects>
-                <viewController id="7Xm-gg-XEH" customClass="FinishViewController" customModule="G_Navigation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="finishVC" id="7Xm-gg-XEH" customClass="FinishViewController" customModule="G_Navigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L84-9V-sEJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrulations! You completed all the destinations." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IQ-CS-vh4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congrulations! You completed all the destinations." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9IQ-CS-vh4">
                                 <rect key="frame" x="20" y="129" width="353" height="38.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -129,7 +160,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDA-6a-aMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867.9389312977098" y="-28.169014084507044"/>
+            <point key="canvasLocation" x="1863" y="-354"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3nk-lk-X3H">

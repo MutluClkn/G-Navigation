@@ -8,5 +8,5 @@
 import Foundation
 
 struct SegueConstants {
-    static let toFinishVC = "toFinishVC"
+    static let toLicenseVC = "toLicenseVC"
 }

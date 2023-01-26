@@ -12,17 +12,17 @@
   ],
   "location": [
     {
-      "distance": 0.02,
+      "distance": 20.0,
       "lat": 41.00164,
       "long": 28.88463
     },
     {
-      "distance": 0.02,
+      "distance": 20.0,
       "lat": 41.02665,
       "long": 28.92642
     },
     {
-      "distance": 0.02,
+      "distance": 20.0,
       "lat": 41.00734,
       "long": 28.97803
     }

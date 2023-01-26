@@ -12,7 +12,7 @@ import CoreLocation
 
 
 //MARK: - MapViewController
-class MapViewController: UIViewController {
+final class MapViewController: UIViewController {
     
     //MARK: - Properties
     @IBOutlet weak var mapView: GMSMapView!
@@ -32,14 +32,13 @@ class MapViewController: UIViewController {
     //Managers
     let navigationManager = NavigationManager()
     let directionManager = DirectionManager()
-    let distanceManager = DistanceManager()
     
     //Fetched Datas
     var navigations : NavigationData?
     var points : String = ""
-    var distance : String = ""
     
     //Location Count
+    var destinations = [CLLocationCoordinate2D]()
     var succeedLocations : Int = 0
     
     
@@ -51,9 +50,6 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //GoogleMaps
-        //print("License: \n\n\(GMSServices.openSourceLicenseInfo())")
-        
         //CoreLocation
         configureLocationManager()
         
@@ -64,6 +60,8 @@ class MapViewController: UIViewController {
         //Managers
         fetchNavigationData()
         fetchDirectionData()
+        
+        self.destinations = []
     }
     
     
@@ -79,7 +77,7 @@ class MapViewController: UIViewController {
         mapView.animate(to: camera)
         
         
-        // Creates a marker in the center of the map.
+        // Creates a marker on the map.
         let startMarker = GMSMarker()
         startMarker.position = startCoordinates
         startMarker.title = "Start"
@@ -101,6 +99,14 @@ class MapViewController: UIViewController {
         print("Start Updating Location")
     }
     
+    //Alert Message
+    func alertMessage(alertTitle: String, alertMesssage: String) {
+            let alertController = UIAlertController(title: alertTitle, message: alertMesssage, preferredStyle: UIAlertController.Style.alert)
+            let alertAction = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default)
+            alertController.addAction(alertAction)
+            self.present(alertController, animated: true)
+        }
+    
     //Fetch Navigation Data
     private func fetchNavigationData(){
         navigationManager.performRequest { results in
@@ -111,64 +117,48 @@ class MapViewController: UIViewController {
                 print(error)
             }
         }
+        
+        for i in 0...2{
+            guard let directionLat = self.navigations?.location[i].lat else { return }
+            guard let directionLong = self.navigations?.location[i].long else { return }
+            self.destinations.append(CLLocationCoordinate2D(latitude: directionLat, longitude: directionLong))
+        }
+        
     }
     
     //Fetch Direction Data
     private func fetchDirectionData(){
-        if self.succeedLocations <= 2 {
-            guard let directionLat = self.navigations?.location[succeedLocations].lat else { return }
-            guard let directionLong = self.navigations?.location[succeedLocations].long else { return }
-            
-            directionManager.performRequest(origin: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), destination: CLLocationCoordinate2D(latitude: directionLat, longitude: directionLong)) { result in
-                switch result {
-                case.success(let direction):
-                    self.points = direction
-                case.failure(let error):
-                    print(error)
-                }
-            }
-        }
-    }
-    
-    //Fetch Distance Data
-    private func fetchDistanceData(){
+        guard let directionLat = self.navigations?.location[self.succeedLocations].lat else { return }
+        guard let directionLong = self.navigations?.location[self.succeedLocations].long else { return }
         
-        guard let directionLat = self.navigations?.location[succeedLocations].lat else { return }
-        guard let directionLong = self.navigations?.location[succeedLocations].long else { return }
-        
-        distanceManager.performRequest(origin: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), destination: CLLocationCoordinate2D(latitude: directionLat, longitude: directionLong)) { result in
+        directionManager.performRequest(origin: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), destination: CLLocationCoordinate2D(latitude: directionLat, longitude: directionLong)) { result in
             switch result {
-            case.success(let distance):
-                self.distance = String(distance.dropLast(2))
+            case.success(let direction):
+                self.points = direction
             case.failure(let error):
                 print(error)
             }
         }
     }
     
-    //Prepare For Segue
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == SegueConstants.toFinishVC{
-            let destinationVC = FinishViewController()
-        }
-    }
-    
-    
     //-----------------------------
     //MARK: - Actions
     //-----------------------------
     
     //Start Button
-    @IBAction func startButtonDidPress(_ sender: UIButton) {
+    @IBAction func startBarButtonDidPress(_ sender: UIBarButtonItem) {
         manager.startUpdatingLocation()
     }
     
     //Stop Button
-    @IBAction func stopButtonDidPress(_ sender: UIButton) {
+    @IBAction func stopBarButtonDidPress(_ sender: UIBarButtonItem) {
         manager.stopUpdatingLocation()
         self.mapView.clear()
-        
-        performSegue(withIdentifier: SegueConstants.toFinishVC, sender: nil)
+        self.succeedLocations = 0
+    }
+    //Google License
+    @IBAction func googleLicenseButtonDidPress(_ sender: UIButton) {
+        performSegue(withIdentifier: SegueConstants.toLicenseVC, sender: nil)
     }
     
 }
@@ -182,6 +172,10 @@ extension MapViewController: CLLocationManagerDelegate{
     //Did Update Location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
+        self.mapView.clear()
+        fetchNavigationData()
+        fetchDirectionData()
+        
         guard let location = locations.last else {
             print("Error while getting last location!")
             return
@@ -192,11 +186,35 @@ extension MapViewController: CLLocationManagerDelegate{
         
         
         if self.succeedLocations <= 2 {
-            fetchNavigationData()
-            fetchDirectionData()
-            fetchDistanceData()
-            
             if self.points != "" {
+                
+                let finishLat = self.destinations[self.succeedLocations].latitude
+                let finishLong = self.destinations[self.succeedLocations].longitude
+                
+                guard let distanceJSON = self.navigations?.location[succeedLocations].distance else { return }
+                
+                guard let currentDistance = self.manager.location?.distance(from: CLLocation(latitude: finishLat, longitude: finishLong)) else { return }
+                
+                print("Target: \(distanceJSON)m,  Current Distance: \(currentDistance)")
+                
+                //If user arrived to target location
+                if currentDistance < distanceJSON {
+                    self.succeedLocations = self.succeedLocations + 1
+                    
+                    guard let message = self.navigations?.alert_message else { return }
+                    self.alertMessage(alertTitle: "", alertMesssage: message)
+                    
+                    //If 3 locations completed
+                    if self.succeedLocations == 3 {
+                        self.succeedLocations = 0
+                        let storyBoard : UIStoryboard = UIStoryboard(name: StoryboardConstants.main, bundle:nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: StoryboardConstants.finishVC) as! FinishViewController
+                        nextViewController.modalPresentationStyle = .fullScreen
+                        self.present(nextViewController, animated:true, completion:nil)
+                    }
+                    
+                }
+                
                 let points = self.points
                 let path = GMSPath(fromEncodedPath: points)
                 let polyline = GMSPolyline(path: path)
@@ -204,22 +222,10 @@ extension MapViewController: CLLocationManagerDelegate{
                 polyline.strokeWidth = 5
                 polyline.map = self.mapView
                 
-                
-                guard let finishLat = self.navigations?.location[succeedLocations].lat else { return }
-                guard let finishLong = self.navigations?.location[succeedLocations].long else { return }
-                
                 addGoogleMaps(startCoordinates: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), finishCoordinates: CLLocationCoordinate2D(latitude: finishLat, longitude: finishLong))
                 
-                guard let distanceDouble = self.navigations?.location[succeedLocations].distance else { return }
-                print("Goal: \(distanceDouble),  Current Distance: \(self.distance)")
-                
-               //TODO: I'll remove "m" or "km" from self.distance and turn it into Double.
-                
-               // if distanceDouble >= self.distance && self.succeedLocations < 3 {
-               //     self.succeedLocations = self.succeedLocations + 1
-               // }
                 print("Current Stage: \(succeedLocations)")
-
+                
             }
         }
         

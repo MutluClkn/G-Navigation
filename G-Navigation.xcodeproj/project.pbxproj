@@ -11,11 +11,11 @@
 		FA277274297FC154009E8267 /* DirectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277273297FC154009E8267 /* DirectionData.swift */; };
 		FA277277297FC26A009E8267 /* DirectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277276297FC26A009E8267 /* DirectionManager.swift */; };
 		FA277279297FC670009E8267 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277278297FC670009E8267 /* NavigationManager.swift */; };
-		FA27727B297FE760009E8267 /* DistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27727A297FE760009E8267 /* DistanceManager.swift */; };
-		FA27727D297FE7E4009E8267 /* DistanceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27727C297FE7E4009E8267 /* DistanceData.swift */; };
 		FA865B00297A9B4B008077DA /* API_Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865AFF297A9B4B008077DA /* API_Keys.swift */; };
 		FA865B0B297AB515008077DA /* NavigationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865B0A297AB515008077DA /* NavigationData.swift */; };
 		FA865B0D297AB60D008077DA /* navigation.json in Resources */ = {isa = PBXBuildFile; fileRef = FA865B0C297AB60D008077DA /* navigation.json */; };
+		FAA623A929827A3200E00374 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA623A829827A3200E00374 /* LicenseViewController.swift */; };
+		FAA623AB2982813F00E00374 /* StoryboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA623AA2982813F00E00374 /* StoryboardConstants.swift */; };
 		FAACFCBE298123A200B779FC /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCBD298123A200B779FC /* FinishViewController.swift */; };
 		FAACFCC02981275100B779FC /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = FAACFCBF2981275100B779FC /* success.json */; };
 		FAACFCC4298128A000B779FC /* SegueConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCC3298128A000B779FC /* SegueConstants.swift */; };
@@ -35,11 +35,11 @@
 		FA277273297FC154009E8267 /* DirectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionData.swift; sourceTree = "<group>"; };
 		FA277276297FC26A009E8267 /* DirectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionManager.swift; sourceTree = "<group>"; };
 		FA277278297FC670009E8267 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
-		FA27727A297FE760009E8267 /* DistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceManager.swift; sourceTree = "<group>"; };
-		FA27727C297FE7E4009E8267 /* DistanceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceData.swift; sourceTree = "<group>"; };
 		FA865AFF297A9B4B008077DA /* API_Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Keys.swift; sourceTree = "<group>"; };
 		FA865B0A297AB515008077DA /* NavigationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationData.swift; sourceTree = "<group>"; };
 		FA865B0C297AB60D008077DA /* navigation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = navigation.json; sourceTree = "<group>"; };
+		FAA623A829827A3200E00374 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		FAA623AA2982813F00E00374 /* StoryboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardConstants.swift; sourceTree = "<group>"; };
 		FAACFCBD298123A200B779FC /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		FAACFCBF2981275100B779FC /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		FAACFCC3298128A000B779FC /* SegueConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueConstants.swift; sourceTree = "<group>"; };
@@ -86,7 +86,6 @@
 		FA277275297FC255009E8267 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FA27727A297FE760009E8267 /* DistanceManager.swift */,
 				FA277276297FC26A009E8267 /* DirectionManager.swift */,
 				FA277278297FC670009E8267 /* NavigationManager.swift */,
 			);
@@ -98,6 +97,7 @@
 			children = (
 				FABDC8122979104700A9B7FA /* MapViewController.swift */,
 				FAACFCBD298123A200B779FC /* FinishViewController.swift */,
+				FAA623A829827A3200E00374 /* LicenseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -105,7 +105,6 @@
 		FA865B04297AB44D008077DA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA27727C297FE7E4009E8267 /* DistanceData.swift */,
 				FA277273297FC154009E8267 /* DirectionData.swift */,
 				FA865B0A297AB515008077DA /* NavigationData.swift */,
 			);
@@ -153,6 +152,7 @@
 		FAACFCC22981289500B779FC /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				FAA623AA2982813F00E00374 /* StoryboardConstants.swift */,
 				FAACFCC3298128A000B779FC /* SegueConstants.swift */,
 				FAACFCC529812A0C00B779FC /* AnimationConstants.swift */,
 			);
@@ -329,14 +329,14 @@
 				FA865B0B297AB515008077DA /* NavigationData.swift in Sources */,
 				FABDC8132979104700A9B7FA /* MapViewController.swift in Sources */,
 				FABDC80F2979104700A9B7FA /* AppDelegate.swift in Sources */,
-				FA27727B297FE760009E8267 /* DistanceManager.swift in Sources */,
 				FA865B00297A9B4B008077DA /* API_Keys.swift in Sources */,
+				FAA623A929827A3200E00374 /* LicenseViewController.swift in Sources */,
 				FABDC8112979104700A9B7FA /* SceneDelegate.swift in Sources */,
 				FA277279297FC670009E8267 /* NavigationManager.swift in Sources */,
 				FAACFCC4298128A000B779FC /* SegueConstants.swift in Sources */,
 				FA277274297FC154009E8267 /* DirectionData.swift in Sources */,
-				FA27727D297FE7E4009E8267 /* DistanceData.swift in Sources */,
 				FA277277297FC26A009E8267 /* DirectionManager.swift in Sources */,
+				FAA623AB2982813F00E00374 /* StoryboardConstants.swift in Sources */,
 				FAACFCBE298123A200B779FC /* FinishViewController.swift in Sources */,
 				FAACFCC629812A0C00B779FC /* AnimationConstants.swift in Sources */,
 			);
