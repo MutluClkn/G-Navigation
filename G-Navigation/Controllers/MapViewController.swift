@@ -79,11 +79,17 @@ final class MapViewController: UIViewController {
         
         // Creates a marker on the map.
         let startMarker = GMSMarker()
+        startMarker.icon = UIImage(named: "user")
         startMarker.position = startCoordinates
         startMarker.title = "Start"
         startMarker.map = mapView
         
         let finishMarker = GMSMarker()
+        if self.succeedLocations == 2 {
+            finishMarker.icon = UIImage(named: "finish")
+        }else {
+            finishMarker.icon = UIImage(named: "target")
+         }
         finishMarker.position = finishCoordinates
         finishMarker.title = "Finish"
         finishMarker.map = mapView
@@ -148,6 +154,7 @@ final class MapViewController: UIViewController {
     //Start Button
     @IBAction func startBarButtonDidPress(_ sender: UIBarButtonItem) {
         manager.startUpdatingLocation()
+        self.succeedLocations = 0
     }
     
     //Stop Button
