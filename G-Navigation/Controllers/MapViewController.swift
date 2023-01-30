@@ -151,18 +151,18 @@ final class MapViewController: UIViewController {
     //MARK: - Actions
     //-----------------------------
     
-    //Start Button
-    @IBAction func startBarButtonDidPress(_ sender: UIBarButtonItem) {
-        manager.startUpdatingLocation()
-        self.succeedLocations = 0
-    }
-    
-    //Stop Button
-    @IBAction func stopBarButtonDidPress(_ sender: UIBarButtonItem) {
+    //Give Up Button - Failure VC
+    @IBAction func giveUpBarButtonDidPress(_ sender: UIBarButtonItem) {
         manager.stopUpdatingLocation()
         self.mapView.clear()
         self.succeedLocations = 0
+        //Push VC
+        let storyBoard : UIStoryboard = UIStoryboard(name: StoryboardConstants.main, bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: StoryboardConstants.failureVC) as! FailureViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        self.present(nextViewController, animated:true, completion:nil)
     }
+    
     //Google License
     @IBAction func googleLicenseButtonDidPress(_ sender: UIButton) {
         performSegue(withIdentifier: SegueConstants.toLicenseVC, sender: nil)

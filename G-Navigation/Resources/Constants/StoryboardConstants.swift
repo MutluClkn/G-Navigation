@@ -11,4 +11,5 @@ struct StoryboardConstants {
     static let main = "Main"
     static let finishVC = "finishVC"
     static let licenseVC = "licenseVC"
+    static let failureVC = "failureVC"
 }

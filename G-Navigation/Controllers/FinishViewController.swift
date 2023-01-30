@@ -41,7 +41,7 @@ final class FinishViewController: UIViewController {
     }
     
     @IBAction func restartButtonDidPress(_ sender: UIButton) {
-        self.dismiss(animated: true)
+        self.performSegue(withIdentifier: SegueConstants.toStartVC, sender: nil)
     }
     
     

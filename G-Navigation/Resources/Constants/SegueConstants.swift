@@ -9,4 +9,7 @@ import Foundation
 
 struct SegueConstants {
     static let toLicenseVC = "toLicenseVC"
+    static let toMapVC = "toMapVC"
+    static let toStartVC = "toStartVC"
+    static let failtureToStart = "failtureToStart"
 }
