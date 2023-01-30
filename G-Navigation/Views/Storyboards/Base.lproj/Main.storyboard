@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mkt-Ez-dNz">
-                                <rect key="frame" x="146.66666666666666" y="406" width="100" height="40"/>
+                                <rect key="frame" x="146.66666666666666" y="647.33333333333337" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="P8r-4w-kBh"/>
                                     <constraint firstAttribute="width" constant="100" id="dXp-Rf-6Yv"/>
@@ -85,15 +85,36 @@
                                     <action selector="restartButtonPressed:" destination="WzH-iu-O5S" eventType="touchUpInside" id="nA7-Ov-7w2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You gave up. Press on 'Restart' button to start scratch." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEM-A0-b2S">
+                                <rect key="frame" x="20" y="129" width="353" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVJ-2R-00L" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="20" y="197.33333333333337" width="353" height="400"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="jKJ-8J-rdU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4b6-6V-q0a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mkt-Ez-dNz" firstAttribute="centerX" secondItem="HOI-Ct-dap" secondAttribute="centerX" id="1ov-Cp-mRh"/>
-                            <constraint firstItem="mkt-Ez-dNz" firstAttribute="centerY" secondItem="HOI-Ct-dap" secondAttribute="centerY" id="bay-S3-8r4"/>
+                            <constraint firstItem="VVJ-2R-00L" firstAttribute="top" secondItem="eEM-A0-b2S" secondAttribute="bottom" constant="30" id="Ap1-Si-Ksz"/>
+                            <constraint firstItem="eEM-A0-b2S" firstAttribute="top" secondItem="4b6-6V-q0a" secondAttribute="top" constant="70" id="KOc-5o-Urf"/>
+                            <constraint firstItem="VVJ-2R-00L" firstAttribute="top" secondItem="eEM-A0-b2S" secondAttribute="bottom" constant="30" id="KgP-Sn-tMW"/>
+                            <constraint firstItem="eEM-A0-b2S" firstAttribute="leading" secondItem="4b6-6V-q0a" secondAttribute="leading" constant="20" id="VGG-YZ-BYN"/>
+                            <constraint firstItem="mkt-Ez-dNz" firstAttribute="top" secondItem="VVJ-2R-00L" secondAttribute="bottom" constant="50" id="Z30-7B-XWg"/>
+                            <constraint firstItem="VVJ-2R-00L" firstAttribute="leading" secondItem="4b6-6V-q0a" secondAttribute="leading" constant="20" id="m3b-NN-Sha"/>
+                            <constraint firstItem="4b6-6V-q0a" firstAttribute="trailing" secondItem="VVJ-2R-00L" secondAttribute="trailing" constant="20" id="qug-Bv-cYk"/>
+                            <constraint firstItem="mkt-Ez-dNz" firstAttribute="centerX" secondItem="HOI-Ct-dap" secondAttribute="centerX" id="sGM-R8-DVb"/>
+                            <constraint firstItem="4b6-6V-q0a" firstAttribute="trailing" secondItem="eEM-A0-b2S" secondAttribute="trailing" constant="20" id="xGX-Ss-p7G"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="failureAnimation" destination="VVJ-2R-00L" id="mPM-BP-ual"/>
                         <segue destination="g5a-KU-ZX0" kind="presentation" identifier="failtureToStart" modalPresentationStyle="fullScreen" id="ECH-lB-zCO"/>
                     </connections>
                 </viewController>
@@ -257,6 +278,7 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="VVJ-2R-00L"/>
         <designable name="WmV-aJ-TV1"/>
     </designables>
     <inferredMetricsTieBreakers>

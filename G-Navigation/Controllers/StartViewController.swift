@@ -5,16 +5,25 @@
 //  Created by Mutlu Çalkan on 30.01.2023.
 //
 
+//MARK: - Frameworks
 import UIKit
 
+//MARK: - StartViewController
 final class StartViewController: UIViewController {
 
+    //-----------------------------
+    //MARK: - Lifecycle
+    //-----------------------------
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    
+    //-----------------------------
+    //MARK: - Actions
+    //-----------------------------
     
     @IBAction func startButtonDidPress(_ sender: UIButton) {
         self.performSegue(withIdentifier: SegueConstants.toMapVC, sender: nil)

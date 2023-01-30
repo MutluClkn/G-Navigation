@@ -24,21 +24,13 @@ final class FinishViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        successAnimationConfiraguration(AnimationConstants.successName)
+        configureAnimation(animationView: successAnimation, AnimationConstants.successName)
     }
 
     
     //-----------------------------
-    //MARK: - Methods
+    //MARK: - Actions
     //-----------------------------
-    
-    private func successAnimationConfiraguration(_ name: String){
-        successAnimation.animation = .named(name)
-        successAnimation.backgroundColor = .systemBackground
-        successAnimation.contentMode = .scaleAspectFit
-        successAnimation.loopMode = .playOnce
-        successAnimation.play()
-    }
     
     @IBAction func restartButtonDidPress(_ sender: UIButton) {
         self.performSegue(withIdentifier: SegueConstants.toStartVC, sender: nil)

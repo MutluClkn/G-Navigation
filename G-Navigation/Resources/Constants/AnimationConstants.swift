@@ -9,4 +9,5 @@ import Foundation
 
 struct AnimationConstants {
     static let successName = "success"
+    static let failureName = "failure"
 }
