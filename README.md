@@ -25,7 +25,7 @@ It is a navigation app that uses Google Maps SDK. There are 3 different location
 <img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal3.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal3-2.png " width="222">
 
 ## Finish Screen
-<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/Success.png " width="222">
-.
+<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/success.png " width="222">
+
 ## GiveUp - Failure Screen
 <img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/GiveUp.png " width="222">
