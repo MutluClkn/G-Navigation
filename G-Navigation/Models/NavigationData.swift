@@ -9,20 +9,20 @@
 import Foundation
 
 //MARK: - NavigationData
-struct NavigationData : Decodable {
+struct NavigationData : Codable {
     let alert_message : String
     let user : [Users]
     let location : [Locations]
 }
 
 //MARK: - Users
-struct Users : Decodable {
+struct Users : Codable {
     let name : String
     let surname: String
 }
 
 //MARK: - Locations
-struct Locations : Decodable {
+struct Locations : Codable {
     let distance : Double
     let lat : Double
     let long : Double

@@ -57,6 +57,7 @@
                     <connections>
                         <outlet property="mapView" destination="U1B-CC-ahr" id="5Eh-5F-ZWE"/>
                         <segue destination="DRc-Fw-gPk" kind="show" identifier="toLicenseVC" id="1RC-Zq-ykd"/>
+                        <segue destination="7Xm-gg-XEH" kind="presentation" identifier="mapToSucces" modalPresentationStyle="fullScreen" id="P00-iW-rbQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -209,7 +210,7 @@
                     <navigationItem key="navigationItem" id="9V8-B7-Sp5"/>
                     <connections>
                         <outlet property="successAnimation" destination="WmV-aJ-TV1" id="tjA-AQ-73b"/>
-                        <segue destination="g5a-KU-ZX0" kind="presentation" modalPresentationStyle="fullScreen" id="Ijo-a8-T20"/>
+                        <segue destination="g5a-KU-ZX0" kind="presentation" identifier="toStartVC" modalPresentationStyle="fullScreen" id="Ijo-a8-T20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDA-6a-aMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -238,11 +239,34 @@
                                     <action selector="startButtonDidPress:" destination="g5a-KU-ZX0" eventType="touchUpInside" id="prZ-rB-6Lu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome. We created a challenge for you. Press on Start button when you are ready." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXC-iV-r76">
+                                <rect key="frame" x="20" y="202.66666666666666" width="353" height="38.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOn-ar-n9P">
+                                <rect key="frame" x="121.66666666666669" y="611" width="150" height="34.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="uc6-OT-vJS"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Google License"/>
+                                <connections>
+                                    <action selector="googleLicenseButton:" destination="g5a-KU-ZX0" eventType="touchUpInside" id="wmt-dY-AND"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fps-D3-MhJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Yk9-Og-Smh" firstAttribute="top" secondItem="KXC-iV-r76" secondAttribute="bottom" constant="60" id="XGR-V3-5dM"/>
+                            <constraint firstItem="oOn-ar-n9P" firstAttribute="centerX" secondItem="e6g-DF-Ek7" secondAttribute="centerX" id="Ype-En-ZN1"/>
                             <constraint firstItem="Yk9-Og-Smh" firstAttribute="centerY" secondItem="e6g-DF-Ek7" secondAttribute="centerY" id="bAG-WX-6ZP"/>
+                            <constraint firstItem="Fps-D3-MhJ" firstAttribute="trailing" secondItem="KXC-iV-r76" secondAttribute="trailing" constant="20" id="fXi-C6-UrA"/>
+                            <constraint firstItem="KXC-iV-r76" firstAttribute="leading" secondItem="Fps-D3-MhJ" secondAttribute="leading" constant="20" id="jls-eS-W2J"/>
+                            <constraint firstItem="oOn-ar-n9P" firstAttribute="top" secondItem="Yk9-Og-Smh" secondAttribute="bottom" constant="60" id="krp-kl-ZKo"/>
                             <constraint firstItem="Yk9-Og-Smh" firstAttribute="centerX" secondItem="e6g-DF-Ek7" secondAttribute="centerX" id="vw1-Vn-X6v"/>
                         </constraints>
                     </view>

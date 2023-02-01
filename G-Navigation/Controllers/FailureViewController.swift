@@ -10,7 +10,7 @@ import UIKit
 import Lottie
 
 //MARK: - FailureViewController
-final class FailureViewController: UIViewController {
+final class FailureViewController: BaseViewController {
 
     @IBOutlet weak var failureAnimation: LottieAnimationView!
     

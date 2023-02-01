@@ -8,16 +8,16 @@
 import Foundation
 
 // MARK: - WeatherData
-struct DirectionData : Decodable {
+struct DirectionData : Codable {
     let routes: [Route]
 }
 
 // MARK: - Route
-struct Route : Decodable {
+struct Route : Codable {
     let overview_polyline: OverviewPolyline
 }
 
 // MARK: - OverviewPolyline
-struct OverviewPolyline : Decodable{
+struct OverviewPolyline : Codable{
     let points: String
 }

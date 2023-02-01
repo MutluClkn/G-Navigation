@@ -29,5 +29,10 @@ final class StartViewController: UIViewController {
         self.performSegue(withIdentifier: SegueConstants.toMapVC, sender: nil)
     }
     
+    @IBAction func googleLicenseButton(_ sender: UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: StoryboardConstants.main, bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: StoryboardConstants.licenseVC) as! LicenseViewController
+        self.present(nextViewController, animated:true, completion:nil)
+    }
     
 }

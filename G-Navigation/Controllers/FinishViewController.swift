@@ -10,7 +10,7 @@ import UIKit
 import Lottie
 
 //MARK: - FinishViewController
-final class FinishViewController: UIViewController {
+final class FinishViewController: BaseViewController {
 
     @IBOutlet weak var successAnimation: LottieAnimationView!
     

@@ -12,11 +12,10 @@ import CoreLocation
 
 
 //MARK: - MapViewController
-final class MapViewController: UIViewController {
+final class MapViewController: BaseViewController {
     
     //MARK: - Properties
     @IBOutlet weak var mapView: GMSMapView!
-    
     
     
     //-----------------------------
@@ -44,7 +43,7 @@ final class MapViewController: UIViewController {
     
     
     //-----------------------------
-    //MARK: - viewDidLoad
+    //MARK: - Lifecycle
     //-----------------------------
     
     override func viewDidLoad() {
@@ -54,7 +53,6 @@ final class MapViewController: UIViewController {
         configureLocationManager()
         
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //Managers
@@ -75,7 +73,6 @@ final class MapViewController: UIViewController {
         let camera = GMSCameraPosition.camera(withTarget: startCoordinates, zoom: 13.0)
         mapView.camera = camera
         mapView.animate(to: camera)
-        
         
         // Creates a marker on the map.
         let startMarker = GMSMarker()
@@ -105,21 +102,14 @@ final class MapViewController: UIViewController {
         print("Start Updating Location")
     }
     
-    //Alert Message
-    func alertMessage(alertTitle: String, alertMesssage: String) {
-            let alertController = UIAlertController(title: alertTitle, message: alertMesssage, preferredStyle: UIAlertController.Style.alert)
-            let alertAction = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default)
-            alertController.addAction(alertAction)
-            self.present(alertController, animated: true)
-        }
-    
     //Fetch Navigation Data
     private func fetchNavigationData(){
-        navigationManager.performRequest { results in
-            switch results{
-            case.success(let data):
+        
+        ServiceManager.shared.fetchData(type: NavigationData.self, origin: CLLocationCoordinate2D(latitude: 0, longitude: 0), destination: CLLocationCoordinate2D(latitude: 0, longitude: 0)) { result in
+            switch result {
+            case .success(let data):
                 self.navigations = data
-            case.failure(let error):
+            case .failure(let error):
                 print(error)
             }
         }
@@ -137,12 +127,12 @@ final class MapViewController: UIViewController {
         guard let directionLat = self.navigations?.location[self.succeedLocations].lat else { return }
         guard let directionLong = self.navigations?.location[self.succeedLocations].long else { return }
         
-        directionManager.performRequest(origin: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), destination: CLLocationCoordinate2D(latitude: directionLat, longitude: directionLong)) { result in
-            switch result {
-            case.success(let direction):
-                self.points = direction
-            case.failure(let error):
-                print(error)
+        ServiceManager.shared.fetchData(type: DirectionData.self, origin: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), destination: CLLocationCoordinate2D(latitude: directionLat, longitude: directionLong)) { result in
+            switch result{
+            case .success(let direction):
+                self.points = direction.routes[0].overview_polyline.points
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
@@ -208,18 +198,15 @@ extension MapViewController: CLLocationManagerDelegate{
                 if currentDistance < distanceJSON {
                     self.succeedLocations = self.succeedLocations + 1
                     
-                    guard let message = self.navigations?.alert_message else { return }
-                    self.alertMessage(alertTitle: "", alertMesssage: message)
-                    
                     //If 3 locations completed
                     if self.succeedLocations == 3 {
-                        self.succeedLocations = 0
-                        let storyBoard : UIStoryboard = UIStoryboard(name: StoryboardConstants.main, bundle:nil)
-                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: StoryboardConstants.finishVC) as! FinishViewController
-                        nextViewController.modalPresentationStyle = .fullScreen
-                        self.present(nextViewController, animated:true, completion:nil)
+                        self.performSegue(withIdentifier: SegueConstants.mapToSucces, sender: nil)
                     }
-                    
+                    //If it is <=2
+                    else{
+                        guard let message = self.navigations?.alert_message else { return }
+                        self.mapAlertMessage(alertTitle: "", alertMesssage: message)
+                    }
                 }
                 
                 let points = self.points

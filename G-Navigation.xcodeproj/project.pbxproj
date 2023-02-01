@@ -11,7 +11,7 @@
 		FA0D7B852987B354004163CE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B842987B354004163CE /* StartViewController.swift */; };
 		FA0D7B872987B6BC004163CE /* FailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B862987B6BC004163CE /* FailureViewController.swift */; };
 		FA0D7B892987CADE004163CE /* failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA0D7B882987CADE004163CE /* failure.json */; };
-		FA0D7B8C2987CBB3004163CE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B8B2987CBB3004163CE /* Extensions.swift */; };
+		FA0D7B8C2987CBB3004163CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */; };
 		FA277274297FC154009E8267 /* DirectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277273297FC154009E8267 /* DirectionData.swift */; };
 		FA277277297FC26A009E8267 /* DirectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277276297FC26A009E8267 /* DirectionManager.swift */; };
 		FA277279297FC670009E8267 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277278297FC670009E8267 /* NavigationManager.swift */; };
@@ -20,6 +20,7 @@
 		FA865B0D297AB60D008077DA /* navigation.json in Resources */ = {isa = PBXBuildFile; fileRef = FA865B0C297AB60D008077DA /* navigation.json */; };
 		FAA623A929827A3200E00374 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA623A829827A3200E00374 /* LicenseViewController.swift */; };
 		FAA623AB2982813F00E00374 /* StoryboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA623AA2982813F00E00374 /* StoryboardConstants.swift */; };
+		FAA70E98298A432A00B5EBEC /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA70E97298A432A00B5EBEC /* ServiceManager.swift */; };
 		FAACFCBE298123A200B779FC /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCBD298123A200B779FC /* FinishViewController.swift */; };
 		FAACFCC02981275100B779FC /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = FAACFCBF2981275100B779FC /* success.json */; };
 		FAACFCC4298128A000B779FC /* SegueConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCC3298128A000B779FC /* SegueConstants.swift */; };
@@ -39,7 +40,7 @@
 		FA0D7B842987B354004163CE /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		FA0D7B862987B6BC004163CE /* FailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureViewController.swift; sourceTree = "<group>"; };
 		FA0D7B882987CADE004163CE /* failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failure.json; sourceTree = "<group>"; };
-		FA0D7B8B2987CBB3004163CE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FA277273297FC154009E8267 /* DirectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionData.swift; sourceTree = "<group>"; };
 		FA277276297FC26A009E8267 /* DirectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionManager.swift; sourceTree = "<group>"; };
 		FA277278297FC670009E8267 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
@@ -48,6 +49,7 @@
 		FA865B0C297AB60D008077DA /* navigation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = navigation.json; sourceTree = "<group>"; };
 		FAA623A829827A3200E00374 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		FAA623AA2982813F00E00374 /* StoryboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardConstants.swift; sourceTree = "<group>"; };
+		FAA70E97298A432A00B5EBEC /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		FAACFCBD298123A200B779FC /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		FAACFCBF2981275100B779FC /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		FAACFCC3298128A000B779FC /* SegueConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueConstants.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			children = (
 				FA277276297FC26A009E8267 /* DirectionManager.swift */,
 				FA277278297FC670009E8267 /* NavigationManager.swift */,
+				FAA70E97298A432A00B5EBEC /* ServiceManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -103,6 +106,7 @@
 		FA865B03297AB445008077DA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */,
 				FABDC8122979104700A9B7FA /* MapViewController.swift */,
 				FAACFCBD298123A200B779FC /* FinishViewController.swift */,
 				FAA623A829827A3200E00374 /* LicenseViewController.swift */,
@@ -138,7 +142,6 @@
 				FA865B0C297AB60D008077DA /* navigation.json */,
 				FABDC80E2979104700A9B7FA /* AppDelegate.swift */,
 				FABDC8102979104700A9B7FA /* SceneDelegate.swift */,
-				FA0D7B8B2987CBB3004163CE /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -350,7 +353,8 @@
 				FAACFCC4298128A000B779FC /* SegueConstants.swift in Sources */,
 				FA0D7B872987B6BC004163CE /* FailureViewController.swift in Sources */,
 				FA277274297FC154009E8267 /* DirectionData.swift in Sources */,
-				FA0D7B8C2987CBB3004163CE /* Extensions.swift in Sources */,
+				FA0D7B8C2987CBB3004163CE /* BaseViewController.swift in Sources */,
+				FAA70E98298A432A00B5EBEC /* ServiceManager.swift in Sources */,
 				FA277277297FC26A009E8267 /* DirectionManager.swift in Sources */,
 				FAA623AB2982813F00E00374 /* StoryboardConstants.swift in Sources */,
 				FAACFCBE298123A200B779FC /* FinishViewController.swift in Sources */,
