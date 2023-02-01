@@ -13,8 +13,6 @@
 		FA0D7B892987CADE004163CE /* failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA0D7B882987CADE004163CE /* failure.json */; };
 		FA0D7B8C2987CBB3004163CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */; };
 		FA277274297FC154009E8267 /* DirectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277273297FC154009E8267 /* DirectionData.swift */; };
-		FA277277297FC26A009E8267 /* DirectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277276297FC26A009E8267 /* DirectionManager.swift */; };
-		FA277279297FC670009E8267 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277278297FC670009E8267 /* NavigationManager.swift */; };
 		FA865B00297A9B4B008077DA /* API_Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865AFF297A9B4B008077DA /* API_Keys.swift */; };
 		FA865B0B297AB515008077DA /* NavigationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865B0A297AB515008077DA /* NavigationData.swift */; };
 		FA865B0D297AB60D008077DA /* navigation.json in Resources */ = {isa = PBXBuildFile; fileRef = FA865B0C297AB60D008077DA /* navigation.json */; };
@@ -42,8 +40,6 @@
 		FA0D7B882987CADE004163CE /* failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failure.json; sourceTree = "<group>"; };
 		FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FA277273297FC154009E8267 /* DirectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionData.swift; sourceTree = "<group>"; };
-		FA277276297FC26A009E8267 /* DirectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionManager.swift; sourceTree = "<group>"; };
-		FA277278297FC670009E8267 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		FA865AFF297A9B4B008077DA /* API_Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Keys.swift; sourceTree = "<group>"; };
 		FA865B0A297AB515008077DA /* NavigationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationData.swift; sourceTree = "<group>"; };
 		FA865B0C297AB60D008077DA /* navigation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = navigation.json; sourceTree = "<group>"; };
@@ -96,8 +92,6 @@
 		FA277275297FC255009E8267 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FA277276297FC26A009E8267 /* DirectionManager.swift */,
-				FA277278297FC670009E8267 /* NavigationManager.swift */,
 				FAA70E97298A432A00B5EBEC /* ServiceManager.swift */,
 			);
 			path = Services;
@@ -349,13 +343,11 @@
 				FA865B00297A9B4B008077DA /* API_Keys.swift in Sources */,
 				FAA623A929827A3200E00374 /* LicenseViewController.swift in Sources */,
 				FABDC8112979104700A9B7FA /* SceneDelegate.swift in Sources */,
-				FA277279297FC670009E8267 /* NavigationManager.swift in Sources */,
 				FAACFCC4298128A000B779FC /* SegueConstants.swift in Sources */,
 				FA0D7B872987B6BC004163CE /* FailureViewController.swift in Sources */,
 				FA277274297FC154009E8267 /* DirectionData.swift in Sources */,
 				FA0D7B8C2987CBB3004163CE /* BaseViewController.swift in Sources */,
 				FAA70E98298A432A00B5EBEC /* ServiceManager.swift in Sources */,
-				FA277277297FC26A009E8267 /* DirectionManager.swift in Sources */,
 				FAA623AB2982813F00E00374 /* StoryboardConstants.swift in Sources */,
 				FAACFCBE298123A200B779FC /* FinishViewController.swift in Sources */,
 				FAACFCC629812A0C00B779FC /* AnimationConstants.swift in Sources */,
