@@ -58,6 +58,7 @@
 		FABDC8172979104900A9B7FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FABDC81A2979104900A9B7FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FABDC81C2979104900A9B7FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADD5BA929A4BCAC0062A699 /* Routes.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Routes.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +205,7 @@
 				FA865B05297AB452008077DA /* Views */,
 				FA865B03297AB445008077DA /* Controllers */,
 				FABDC81C2979104900A9B7FA /* Info.plist */,
+				FADD5BA929A4BCAC0062A699 /* Routes.gpx */,
 			);
 			path = "G-Navigation";
 			sourceTree = "<group>";

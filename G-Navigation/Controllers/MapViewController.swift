@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
-
+import CoreGPX
 
 //MARK: - MapViewController
 final class MapViewController: BaseViewController {
@@ -27,10 +27,6 @@ final class MapViewController: BaseViewController {
     let startLocation = CLLocationCoordinate2D()
     let finishLocation = CLLocationCoordinate2D()
     var currentCoordinates = CLLocationCoordinate2D()
-    
-    //Managers
-    let navigationManager = NavigationManager()
-    let directionManager = DirectionManager()
     
     //Fetched Datas
     var navigations : NavigationData?
@@ -215,7 +211,7 @@ extension MapViewController: CLLocationManagerDelegate{
                 polyline.strokeColor = .systemBlue
                 polyline.strokeWidth = 5
                 polyline.map = self.mapView
-                
+              
                 addGoogleMaps(startCoordinates: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), finishCoordinates: CLLocationCoordinate2D(latitude: finishLat, longitude: finishLong))
                 
                 print("Current Stage: \(succeedLocations)")
