@@ -12,6 +12,7 @@
 		FA0D7B872987B6BC004163CE /* FailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B862987B6BC004163CE /* FailureViewController.swift */; };
 		FA0D7B892987CADE004163CE /* failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA0D7B882987CADE004163CE /* failure.json */; };
 		FA0D7B8C2987CBB3004163CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */; };
+		FA0E46DD29B883C100A0D95C /* Navigation_Route.gpx in Resources */ = {isa = PBXBuildFile; fileRef = FA0E46DC29B883C100A0D95C /* Navigation_Route.gpx */; };
 		FA277274297FC154009E8267 /* DirectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277273297FC154009E8267 /* DirectionData.swift */; };
 		FA865B00297A9B4B008077DA /* API_Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865AFF297A9B4B008077DA /* API_Keys.swift */; };
 		FA865B0B297AB515008077DA /* NavigationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865B0A297AB515008077DA /* NavigationData.swift */; };
@@ -39,6 +40,7 @@
 		FA0D7B862987B6BC004163CE /* FailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureViewController.swift; sourceTree = "<group>"; };
 		FA0D7B882987CADE004163CE /* failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failure.json; sourceTree = "<group>"; };
 		FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		FA0E46DC29B883C100A0D95C /* Navigation_Route.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Navigation_Route.gpx; sourceTree = "<group>"; };
 		FA277273297FC154009E8267 /* DirectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionData.swift; sourceTree = "<group>"; };
 		FA865AFF297A9B4B008077DA /* API_Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Keys.swift; sourceTree = "<group>"; };
 		FA865B0A297AB515008077DA /* NavigationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationData.swift; sourceTree = "<group>"; };
@@ -58,7 +60,6 @@
 		FABDC8172979104900A9B7FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FABDC81A2979104900A9B7FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FABDC81C2979104900A9B7FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FADD5BA929A4BCAC0062A699 /* Routes.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Routes.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +206,7 @@
 				FA865B05297AB452008077DA /* Views */,
 				FA865B03297AB445008077DA /* Controllers */,
 				FABDC81C2979104900A9B7FA /* Info.plist */,
-				FADD5BA929A4BCAC0062A699 /* Routes.gpx */,
+				FA0E46DC29B883C100A0D95C /* Navigation_Route.gpx */,
 			);
 			path = "G-Navigation";
 			sourceTree = "<group>";
@@ -277,6 +278,7 @@
 				FABDC8162979104700A9B7FA /* Main.storyboard in Resources */,
 				FA0D7B892987CADE004163CE /* failure.json in Resources */,
 				FA865B0D297AB60D008077DA /* navigation.json in Resources */,
+				FA0E46DD29B883C100A0D95C /* Navigation_Route.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

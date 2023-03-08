@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
-import CoreGPX
+
 
 //MARK: - MapViewController
 final class MapViewController: BaseViewController {
