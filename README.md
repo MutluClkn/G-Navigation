@@ -9,23 +9,17 @@ It is a navigation app that uses Google Maps SDK. There are 3 different location
 
 ##
 
-## Last Update
-<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/updated.png " width="222">
-
 ## Start
 <img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/Start.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/StartGoogleLicense.png " width="222">
 
-## Map
-<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/MapGoogleLicense.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal1.png " width="222">
+## First Destination
+<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal1.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal1-1.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/MapGoogleLicense.png " width="222">
 
-## First Target
-<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal1.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal1-1.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal1-2.png " width="222">
+## Second Destination
+<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal2.png " width="222">
 
-## Second Target
-<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal2.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal2-2.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal2-3.png " width="222">
-
-## Third Target
-<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal3.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal3-2.png " width="222">
+## Third Destination
+<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal3.png " width="222">
 
 ## Finish Screen
 <img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/success.png " width="222">

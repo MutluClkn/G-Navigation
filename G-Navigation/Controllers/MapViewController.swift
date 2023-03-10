@@ -20,6 +20,7 @@ final class MapViewController: BaseViewController {
     @IBOutlet weak var infoTableView: UITableView!
     @IBOutlet weak var lapseLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var frameView: UIView!
     
     
     //-----------------------------
@@ -65,6 +66,10 @@ final class MapViewController: BaseViewController {
         //Mapview Layer
         self.mapView.layer.masksToBounds = true
         self.mapView.layer.cornerRadius = 30
+        
+        //FrameView Layer
+        self.frameView.layer.masksToBounds = true
+        self.frameView.layer.cornerRadius = 35
         
         //TableView
         self.infoTableView.dataSource = self
