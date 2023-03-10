@@ -280,7 +280,7 @@ extension MapViewController: CLLocationManagerDelegate{
               
                 addGoogleMaps(startCoordinates: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), finishCoordinates: CLLocationCoordinate2D(latitude: finishLat, longitude: finishLong))
                 
-                self.lapseLabel.text = "Lapse: \(succeedLocations)/3"
+                self.lapseLabel.text = "Laps: \(succeedLocations)/3"
                 //print("Current Stage: \(succeedLocations)")
                 
             }
