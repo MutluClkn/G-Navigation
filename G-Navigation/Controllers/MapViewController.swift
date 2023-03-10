@@ -16,6 +16,10 @@ final class MapViewController: BaseViewController {
     
     //MARK: - Properties
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var infoTableView: UITableView!
+    @IBOutlet weak var lapseLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     
     
     //-----------------------------
@@ -36,6 +40,13 @@ final class MapViewController: BaseViewController {
     var destinations = [CLLocationCoordinate2D]()
     var succeedLocations : Int = 0
     
+    //Timer
+    var timer: Timer?
+    var startTime: Date?
+    var elapsedTime: TimeInterval = 0
+    var lapTimes: [String] = []
+
+    
     
     
     //-----------------------------
@@ -47,6 +58,17 @@ final class MapViewController: BaseViewController {
         
         //CoreLocation
         configureLocationManager()
+        
+        //Timer
+        startTimer()
+        
+        //Mapview Layer
+        self.mapView.layer.masksToBounds = true
+        self.mapView.layer.cornerRadius = 30
+        
+        //TableView
+        self.infoTableView.dataSource = self
+        self.infoTableView.delegate = self
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -133,6 +155,41 @@ final class MapViewController: BaseViewController {
         }
     }
     
+    //Timer Methods
+    private func startTimer() {
+        startTime = Date()
+        self.timerLabel.text = "00:00:00"
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { timer in
+            self.updateElapsedTime()
+        }
+    }
+
+
+    private func stopTimer() {
+        timer?.invalidate()
+        self.lapTimes.append(self.timerLabel.text ?? "00:00:00")
+        self.infoTableView.reloadData()
+        timer = nil
+    }
+
+    private func resetTimer() {
+        stopTimer()
+        elapsedTime = 0
+    }
+        
+    private func updateElapsedTime() {
+        guard let startTime = startTime else {
+            return
+        }
+        elapsedTime = -startTime.timeIntervalSinceNow
+        let minutes = Int(elapsedTime / 60)
+        let seconds = Int(elapsedTime) % 60
+        let milliseconds = Int((elapsedTime * 100).truncatingRemainder(dividingBy: 100))
+        self.timerLabel.text = String(format: "%02d:%02d:%02d", minutes, seconds, milliseconds)
+    }
+
+
+    
     //-----------------------------
     //MARK: - Actions
     //-----------------------------
@@ -175,7 +232,7 @@ extension MapViewController: CLLocationManagerDelegate{
         }
         
         self.currentCoordinates = location.coordinate
-        print("Coordinates fetched successfully.")
+        //print("Coordinates fetched successfully.")
         
         
         if self.succeedLocations <= 2 {
@@ -188,14 +245,18 @@ extension MapViewController: CLLocationManagerDelegate{
                 
                 guard let currentDistance = self.manager.location?.distance(from: CLLocation(latitude: finishLat, longitude: finishLong)) else { return }
                 
-                print("Target: \(distanceJSON)m,  Current Distance: \(currentDistance)")
+                //print("Target: \(distanceJSON)m,  Current Distance: \(currentDistance)")
                 
                 //If user arrived to target location
                 if currentDistance < distanceJSON {
                     self.succeedLocations = self.succeedLocations + 1
+                    stopTimer()
+                    startTimer()
                     
                     //If 3 locations completed
                     if self.succeedLocations == 3 {
+                        self.succeedLocations = 0
+                        stopTimer()
                         self.performSegue(withIdentifier: SegueConstants.mapToSucces, sender: nil)
                     }
                     //If it is <=2
@@ -214,7 +275,8 @@ extension MapViewController: CLLocationManagerDelegate{
               
                 addGoogleMaps(startCoordinates: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), finishCoordinates: CLLocationCoordinate2D(latitude: finishLat, longitude: finishLong))
                 
-                print("Current Stage: \(succeedLocations)")
+                self.lapseLabel.text = "Lapse: \(succeedLocations)/3"
+                //print("Current Stage: \(succeedLocations)")
                 
             }
         }
@@ -227,4 +289,40 @@ extension MapViewController: CLLocationManagerDelegate{
     
 }
 
+//MARK: - UITableViewDataSource
+extension MapViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return lapTimes.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CellConstants.infoCell, for: indexPath) as? InfoTableViewCell else {
+            return UITableViewCell()
+        }
+
+        cell.timerLabel.text = String(format: "%d. \(self.lapTimes[indexPath.row])", indexPath.row + 1)
+        cell.completeImageView.image = UIImage(named: "complete")
+        
+        return cell
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension MapViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 48
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Completed Destinations"
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20
+    }
+}
 

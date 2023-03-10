@@ -9,6 +9,9 @@ It is a navigation app that uses Google Maps SDK. There are 3 different location
 
 ##
 
+## Last Update
+<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/updated.png " width="222">
+
 ## Start
 <img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/Start.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/StartGoogleLicense.png " width="222">
 
