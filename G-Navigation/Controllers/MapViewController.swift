@@ -93,7 +93,7 @@ final class MapViewController: BaseViewController {
     
     //Add Google Maps
     private func addGoogleMaps(startCoordinates: CLLocationCoordinate2D, finishCoordinates: CLLocationCoordinate2D){
-        let camera = GMSCameraPosition.camera(withTarget: startCoordinates, zoom: 13.0)
+        let camera = GMSCameraPosition.camera(withTarget: startCoordinates, zoom: 16.0)
         mapView.camera = camera
         mapView.animate(to: camera)
         
@@ -105,11 +105,13 @@ final class MapViewController: BaseViewController {
         startMarker.map = mapView
         
         let finishMarker = GMSMarker()
+        /*
         if self.succeedLocations == 2 {
             finishMarker.icon = UIImage(named: "finish")
         }else {
             finishMarker.icon = UIImage(named: "target")
-         }
+         }*/
+        finishMarker.icon = UIImage(named: "target")
         finishMarker.position = finishCoordinates
         finishMarker.title = "Finish"
         finishMarker.map = mapView
@@ -274,8 +276,8 @@ extension MapViewController: CLLocationManagerDelegate{
                 let points = self.points
                 let path = GMSPath(fromEncodedPath: points)
                 let polyline = GMSPolyline(path: path)
-                polyline.strokeColor = .systemBlue
-                polyline.strokeWidth = 5
+                polyline.strokeColor = UIColor(named: "pathColor") ?? .systemBlue
+                polyline.strokeWidth = 6
                 polyline.map = self.mapView
               
                 addGoogleMaps(startCoordinates: CLLocationCoordinate2D(latitude: self.currentCoordinates.latitude, longitude: self.currentCoordinates.longitude), finishCoordinates: CLLocationCoordinate2D(latitude: finishLat, longitude: finishLong))

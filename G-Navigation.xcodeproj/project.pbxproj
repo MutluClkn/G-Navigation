@@ -10,10 +10,12 @@
 		E364DEF033DBD296480AC4A6 /* Pods_G_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC50F3DFF85EC4AC85FAFE1 /* Pods_G_Navigation.framework */; };
 		FA0D7B852987B354004163CE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B842987B354004163CE /* StartViewController.swift */; };
 		FA0D7B872987B6BC004163CE /* FailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B862987B6BC004163CE /* FailureViewController.swift */; };
-		FA0D7B892987CADE004163CE /* failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA0D7B882987CADE004163CE /* failure.json */; };
 		FA0D7B8C2987CBB3004163CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */; };
-		FA0E46DD29B883C100A0D95C /* Navigation_Route.gpx in Resources */ = {isa = PBXBuildFile; fileRef = FA0E46DC29B883C100A0D95C /* Navigation_Route.gpx */; };
 		FA277274297FC154009E8267 /* DirectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277273297FC154009E8267 /* DirectionData.swift */; };
+		FA81CDB529C0790F00E5113F /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = FA81CDB429C0790F00E5113F /* success.json */; };
+		FA81CDB729C079A600E5113F /* failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA81CDB629C079A600E5113F /* failure.json */; };
+		FA81CDB929C07B8E00E5113F /* locationMark.json in Resources */ = {isa = PBXBuildFile; fileRef = FA81CDB829C07B8E00E5113F /* locationMark.json */; };
+		FA81CDBB29C07FBA00E5113F /* Challenge Route.gpx in Resources */ = {isa = PBXBuildFile; fileRef = FA81CDBA29C07FBA00E5113F /* Challenge Route.gpx */; };
 		FA865B00297A9B4B008077DA /* API_Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865AFF297A9B4B008077DA /* API_Keys.swift */; };
 		FA865B0B297AB515008077DA /* NavigationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA865B0A297AB515008077DA /* NavigationData.swift */; };
 		FA865B0D297AB60D008077DA /* navigation.json in Resources */ = {isa = PBXBuildFile; fileRef = FA865B0C297AB60D008077DA /* navigation.json */; };
@@ -21,7 +23,6 @@
 		FAA623AB2982813F00E00374 /* StoryboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA623AA2982813F00E00374 /* StoryboardConstants.swift */; };
 		FAA70E98298A432A00B5EBEC /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA70E97298A432A00B5EBEC /* ServiceManager.swift */; };
 		FAACFCBE298123A200B779FC /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCBD298123A200B779FC /* FinishViewController.swift */; };
-		FAACFCC02981275100B779FC /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = FAACFCBF2981275100B779FC /* success.json */; };
 		FAACFCC4298128A000B779FC /* SegueConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCC3298128A000B779FC /* SegueConstants.swift */; };
 		FAACFCC629812A0C00B779FC /* AnimationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCC529812A0C00B779FC /* AnimationConstants.swift */; };
 		FABDC80F2979104700A9B7FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDC80E2979104700A9B7FA /* AppDelegate.swift */; };
@@ -40,10 +41,12 @@
 		BDC50F3DFF85EC4AC85FAFE1 /* Pods_G_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_G_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0D7B842987B354004163CE /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		FA0D7B862987B6BC004163CE /* FailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureViewController.swift; sourceTree = "<group>"; };
-		FA0D7B882987CADE004163CE /* failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failure.json; sourceTree = "<group>"; };
 		FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		FA0E46DC29B883C100A0D95C /* Navigation_Route.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Navigation_Route.gpx; sourceTree = "<group>"; };
 		FA277273297FC154009E8267 /* DirectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionData.swift; sourceTree = "<group>"; };
+		FA81CDB429C0790F00E5113F /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
+		FA81CDB629C079A600E5113F /* failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failure.json; sourceTree = "<group>"; };
+		FA81CDB829C07B8E00E5113F /* locationMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locationMark.json; sourceTree = "<group>"; };
+		FA81CDBA29C07FBA00E5113F /* Challenge Route.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Challenge Route.gpx"; sourceTree = "<group>"; };
 		FA865AFF297A9B4B008077DA /* API_Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_Keys.swift; sourceTree = "<group>"; };
 		FA865B0A297AB515008077DA /* NavigationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationData.swift; sourceTree = "<group>"; };
 		FA865B0C297AB60D008077DA /* navigation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = navigation.json; sourceTree = "<group>"; };
@@ -51,7 +54,6 @@
 		FAA623AA2982813F00E00374 /* StoryboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardConstants.swift; sourceTree = "<group>"; };
 		FAA70E97298A432A00B5EBEC /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		FAACFCBD298123A200B779FC /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
-		FAACFCBF2981275100B779FC /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		FAACFCC3298128A000B779FC /* SegueConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueConstants.swift; sourceTree = "<group>"; };
 		FAACFCC529812A0C00B779FC /* AnimationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationConstants.swift; sourceTree = "<group>"; };
 		FABDC80B2979104700A9B7FA /* G-Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "G-Navigation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,8 +170,9 @@
 		FAACFCC12981275500B779FC /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				FA0D7B882987CADE004163CE /* failure.json */,
-				FAACFCBF2981275100B779FC /* success.json */,
+				FA81CDB829C07B8E00E5113F /* locationMark.json */,
+				FA81CDB629C079A600E5113F /* failure.json */,
+				FA81CDB429C0790F00E5113F /* success.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -212,7 +215,7 @@
 				FA865B05297AB452008077DA /* Views */,
 				FA865B03297AB445008077DA /* Controllers */,
 				FABDC81C2979104900A9B7FA /* Info.plist */,
-				FA0E46DC29B883C100A0D95C /* Navigation_Route.gpx */,
+				FA81CDBA29C07FBA00E5113F /* Challenge Route.gpx */,
 			);
 			path = "G-Navigation";
 			sourceTree = "<group>";
@@ -286,13 +289,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAACFCC02981275100B779FC /* success.json in Resources */,
 				FABDC81B2979104900A9B7FA /* LaunchScreen.storyboard in Resources */,
 				FABDC8182979104900A9B7FA /* Assets.xcassets in Resources */,
 				FABDC8162979104700A9B7FA /* Main.storyboard in Resources */,
-				FA0D7B892987CADE004163CE /* failure.json in Resources */,
+				FA81CDBB29C07FBA00E5113F /* Challenge Route.gpx in Resources */,
+				FA81CDB929C07B8E00E5113F /* locationMark.json in Resources */,
 				FA865B0D297AB60D008077DA /* navigation.json in Resources */,
-				FA0E46DD29B883C100A0D95C /* Navigation_Route.gpx in Resources */,
+				FA81CDB529C0790F00E5113F /* success.json in Resources */,
+				FA81CDB729C079A600E5113F /* failure.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,7 +4,7 @@ It is a navigation app that uses Google Maps SDK. There are 3 different location
 
 * The user's location is updated with every movement. 
 * The route is updated according to the user's updated location
-* The current target location is completed when there is a distance of 20 meters from the target location.
+* The current target location is completed when there is a distance of 30 meters from the target location.
 * After completing a destination, an alert message pop-ups and the app loads the new target.
 
 ##
@@ -16,7 +16,7 @@ It is a navigation app that uses Google Maps SDK. There are 3 different location
 <img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal1.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal1-1.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/MapGoogleLicense.png " width="222">
 
 ## Second Destination
-<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal2.png " width="222">
+<img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal2.png " width="222"><img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal2-1.png " width="222">
 
 ## Third Destination
 <img src="https://github.com/MutluClkn/G-Navigation/blob/main/Documentation/goal3.png " width="222">

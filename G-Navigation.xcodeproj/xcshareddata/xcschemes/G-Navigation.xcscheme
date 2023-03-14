@@ -51,7 +51,7 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
-         identifier = "../G-Navigation/Navigation_Route.gpx"
+         identifier = "../G-Navigation/Challenge Route.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>

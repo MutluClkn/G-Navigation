@@ -11,12 +11,21 @@ import Lottie
 
 //MARK: - UIViewController
 class BaseViewController : UIViewController {
-    //Configure Animation
+    //Configure Animation For Once
     func configureAnimation(animationView: LottieAnimationView, _ name: String){
         animationView.animation = .named(name)
         animationView.backgroundColor = .systemBackground
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .playOnce
+        animationView.play()
+    }
+    
+    //Configure Looped Animation
+    func loopAnimation(animationView: LottieAnimationView, _ name: String){
+        animationView.animation = .named(name)
+        animationView.backgroundColor = .systemBackground
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
         animationView.play()
     }
     
