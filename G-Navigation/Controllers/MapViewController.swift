@@ -105,12 +105,6 @@ final class MapViewController: BaseViewController {
         startMarker.map = mapView
         
         let finishMarker = GMSMarker()
-        /*
-        if self.succeedLocations == 2 {
-            finishMarker.icon = UIImage(named: "finish")
-        }else {
-            finishMarker.icon = UIImage(named: "target")
-         }*/
         finishMarker.icon = UIImage(named: "target")
         finishMarker.position = finishCoordinates
         finishMarker.title = "Finish"
@@ -265,6 +259,7 @@ extension MapViewController: CLLocationManagerDelegate{
                         self.succeedLocations = 0
                         stopTimer()
                         self.performSegue(withIdentifier: SegueConstants.mapToSucces, sender: nil)
+                        
                     }
                     //If it is <=2
                     else{
