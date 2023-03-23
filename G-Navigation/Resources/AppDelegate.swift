@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         GMSServices.provideAPIKey(API_Keys.general_API_key)
         GMSPlacesClient.provideAPIKey(API_Keys.general_API_key)
+        
+        FirebaseApp.configure()
         
         return true
     }
