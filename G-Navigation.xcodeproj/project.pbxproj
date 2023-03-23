@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E364DEF033DBD296480AC4A6 /* Pods_G_Navigation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC50F3DFF85EC4AC85FAFE1 /* Pods_G_Navigation.framework */; };
 		FA0834A529CC2EB300C737F4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA0834A429CC2EB300C737F4 /* GoogleService-Info.plist */; };
+		FA0834A729CC4F7600C737F4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0834A629CC4F7600C737F4 /* LoginViewController.swift */; };
 		FA0D7B852987B354004163CE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B842987B354004163CE /* StartViewController.swift */; };
 		FA0D7B872987B6BC004163CE /* FailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B862987B6BC004163CE /* FailureViewController.swift */; };
 		FA0D7B8C2987CBB3004163CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */; };
@@ -41,6 +42,7 @@
 		6ABDB0DF5E5B562A808CCA18 /* Pods-G-Navigation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-G-Navigation.debug.xcconfig"; path = "Target Support Files/Pods-G-Navigation/Pods-G-Navigation.debug.xcconfig"; sourceTree = "<group>"; };
 		BDC50F3DFF85EC4AC85FAFE1 /* Pods_G_Navigation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_G_Navigation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0834A429CC2EB300C737F4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FA0834A629CC4F7600C737F4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA0D7B842987B354004163CE /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		FA0D7B862987B6BC004163CE /* FailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureViewController.swift; sourceTree = "<group>"; };
 		FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA0834A829CC4F8500C737F4 /* User-Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FA0834A629CC4F7600C737F4 /* LoginViewController.swift */,
+			);
+			path = "User-Auth";
+			sourceTree = "<group>";
+		};
+		FA0834A929CC4F9000C737F4 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				FAA623A829827A3200E00374 /* LicenseViewController.swift */,
+				FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		FA0834AA29CC4FB300C737F4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FABDC8122979104700A9B7FA /* MapViewController.swift */,
+				FAACFCBD298123A200B779FC /* FinishViewController.swift */,
+				FA0D7B842987B354004163CE /* StartViewController.swift */,
+				FA0D7B862987B6BC004163CE /* FailureViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		FA73924429A34FAC005B2A70 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,12 +158,9 @@
 		FA865B03297AB445008077DA /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */,
-				FABDC8122979104700A9B7FA /* MapViewController.swift */,
-				FAACFCBD298123A200B779FC /* FinishViewController.swift */,
-				FAA623A829827A3200E00374 /* LicenseViewController.swift */,
-				FA0D7B842987B354004163CE /* StartViewController.swift */,
-				FA0D7B862987B6BC004163CE /* FailureViewController.swift */,
+				FA0834AA29CC4FB300C737F4 /* Core */,
+				FA0834A929CC4F9000C737F4 /* General */,
+				FA0834A829CC4F8500C737F4 /* User-Auth */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -370,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0834A729CC4F7600C737F4 /* LoginViewController.swift in Sources */,
 				FA865B0B297AB515008077DA /* NavigationData.swift in Sources */,
 				FAC6420B29BB19F90047865E /* InfoTableViewCell.swift in Sources */,
 				FA0D7B852987B354004163CE /* StartViewController.swift in Sources */,

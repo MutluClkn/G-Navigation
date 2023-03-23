@@ -13,4 +13,5 @@ struct SegueConstants {
     static let toStartVC = "toStartVC"
     static let failtureToStart = "failtureToStart"
     static let mapToSucces = "mapToSucces"
+    static let loginToStartVC = "loginToStartVC"
 }
