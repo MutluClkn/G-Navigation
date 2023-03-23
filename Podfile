@@ -13,4 +13,9 @@ target 'G-Navigation' do
   # Lottie
   pod 'lottie-ios'
   
+  # Firebase
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
+  pod 'FirebaseStorage'
 end
