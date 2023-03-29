@@ -14,6 +14,7 @@
 		FA0D7B872987B6BC004163CE /* FailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B862987B6BC004163CE /* FailureViewController.swift */; };
 		FA0D7B8C2987CBB3004163CE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */; };
 		FA277274297FC154009E8267 /* DirectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA277273297FC154009E8267 /* DirectionData.swift */; };
+		FA5D6AC329D42C400049E951 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D6AC229D42C400049E951 /* RegisterViewController.swift */; };
 		FA81CDB529C0790F00E5113F /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = FA81CDB429C0790F00E5113F /* success.json */; };
 		FA81CDB729C079A600E5113F /* failure.json in Resources */ = {isa = PBXBuildFile; fileRef = FA81CDB629C079A600E5113F /* failure.json */; };
 		FA81CDB929C07B8E00E5113F /* locationMark.json in Resources */ = {isa = PBXBuildFile; fileRef = FA81CDB829C07B8E00E5113F /* locationMark.json */; };
@@ -47,6 +48,7 @@
 		FA0D7B862987B6BC004163CE /* FailureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureViewController.swift; sourceTree = "<group>"; };
 		FA0D7B8B2987CBB3004163CE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		FA277273297FC154009E8267 /* DirectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionData.swift; sourceTree = "<group>"; };
+		FA5D6AC229D42C400049E951 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FA81CDB429C0790F00E5113F /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		FA81CDB629C079A600E5113F /* failure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = failure.json; sourceTree = "<group>"; };
 		FA81CDB829C07B8E00E5113F /* locationMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = locationMark.json; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0834A629CC4F7600C737F4 /* LoginViewController.swift */,
+				FA5D6AC229D42C400049E951 /* RegisterViewController.swift */,
 			);
 			path = "User-Auth";
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				FA865B0B297AB515008077DA /* NavigationData.swift in Sources */,
 				FAC6420B29BB19F90047865E /* InfoTableViewCell.swift in Sources */,
 				FA0D7B852987B354004163CE /* StartViewController.swift in Sources */,
+				FA5D6AC329D42C400049E951 /* RegisterViewController.swift in Sources */,
 				FABDC8132979104700A9B7FA /* MapViewController.swift in Sources */,
 				FABDC80F2979104700A9B7FA /* AppDelegate.swift in Sources */,
 				FA865B00297A9B4B008077DA /* API_Keys.swift in Sources */,
