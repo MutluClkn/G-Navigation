@@ -30,10 +30,19 @@ class BaseViewController : UIViewController {
     }
     
     //Alert Message
-    func mapAlertMessage(alertTitle: String, alertMesssage: String) {
-            let alertController = UIAlertController(title: alertTitle, message: alertMesssage, preferredStyle: UIAlertController.Style.alert)
-            let alertAction = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default)
-            alertController.addAction(alertAction)
-            self.present(alertController, animated: true)
-        }
+    func alertMessage(alertTitle: String, alertMesssage: String) {
+        let alertController = UIAlertController(title: alertTitle, message: alertMesssage, preferredStyle: UIAlertController.Style.alert)
+        let alertAction = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default)
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true)
+    }
+    
+    //Hide Keyboard
+    func closeKeyboard(){
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(closeKeyboardPressed))
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+    @objc func closeKeyboardPressed(){
+        view.endEditing(true)
+    }
 }
