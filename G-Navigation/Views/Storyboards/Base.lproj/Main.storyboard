@@ -377,7 +377,7 @@
                                                             <constraint firstAttribute="height" constant="35" id="grC-VZ-4K4"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                                     </textField>
                                                 </subviews>
                                                 <constraints>
@@ -555,7 +555,7 @@
                                                                     <constraint firstAttribute="height" constant="35" id="5bX-ry-Vwg"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                             </textField>
                                                         </subviews>
                                                         <constraints>
@@ -613,12 +613,13 @@
                                                                 </constraints>
                                                                 <color key="tintColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Create Account">
+                                                                <buttonConfiguration key="configuration" style="plain" title="Register">
                                                                     <backgroundConfiguration key="background"/>
                                                                     <fontDescription key="titleFontDescription" type="system" pointSize="13"/>
                                                                     <color key="baseForegroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
+                                                                    <action selector="registerButtonDidPress:" destination="gn2-NP-CRz" eventType="touchUpInside" id="6GR-Qi-jL3"/>
                                                                     <segue destination="eTm-3i-wbB" kind="presentation" identifier="loginToRegister" modalPresentationStyle="fullScreen" id="XsF-fX-8dk"/>
                                                                 </connections>
                                                             </button>
@@ -662,7 +663,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="e7C-Gm-Sn6" id="g2k-sh-TCU"/>
                         <outlet property="loginView" destination="iCr-uG-Ibd" id="5iE-ZQ-aFT"/>
+                        <outlet property="passwordTextField" destination="Rgm-5J-YU4" id="wcY-fZ-3a8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M4T-A3-Bgx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
