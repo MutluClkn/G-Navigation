@@ -59,7 +59,7 @@ final class LoginViewController: BaseViewController {
           guard let strongSelf = self else { return }
             if let error {
                 alertController.dismiss(animated: true)
-                strongSelf.alertMessage(alertTitle: "Error", alertMesssage: error.localizedDescription)
+                strongSelf.alertMessage(alertTitle: "Error", alertMesssage: error.localizedDescription, completionHandler: nil)
             }
             else {
                 alertController.dismiss(animated: true)

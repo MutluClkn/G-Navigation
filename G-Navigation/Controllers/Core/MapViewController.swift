@@ -264,7 +264,8 @@ extension MapViewController: CLLocationManagerDelegate{
                     //If it is <=2
                     else{
                         guard let message = self.navigations?.alert_message else { return }
-                        self.alertMessage(alertTitle: "", alertMesssage: message)
+                        self.alertMessage(alertTitle: "", alertMesssage: message, completionHandler: nil)
+                      //  self.alertMessage(alertTitle: "", alertMesssage: message)
                     }
                 }
                 

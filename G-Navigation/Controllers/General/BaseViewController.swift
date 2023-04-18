@@ -30,12 +30,26 @@ class BaseViewController : UIViewController {
     }
     
     //Alert Message
+    /*
     func alertMessage(alertTitle: String, alertMesssage: String) {
         let alertController = UIAlertController(title: alertTitle, message: alertMesssage, preferredStyle: UIAlertController.Style.alert)
         let alertAction = UIAlertAction(title: "Okay", style: UIAlertAction.Style.default)
         alertController.addAction(alertAction)
         self.present(alertController, animated: true)
     }
+    */
+    func alertMessage(alertTitle: String?, alertMesssage: String?, completionHandler: (() -> Void)?) {
+        let alertController = UIAlertController(title: alertTitle, message: alertMesssage, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                completionHandler?()
+        }
+        
+        alertController.addAction(okAction)
+
+        self.present(alertController, animated: true, completion: nil)
+    }
+
     
     //Hide Keyboard
     func closeKeyboard(){

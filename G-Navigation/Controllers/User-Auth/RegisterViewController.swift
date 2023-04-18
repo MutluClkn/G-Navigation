@@ -8,6 +8,8 @@
 //MARK: - Libraries
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
+
 
 //MARK: - RegisterViewController
 final class RegisterViewController: BaseViewController {
@@ -28,6 +30,7 @@ final class RegisterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         closeKeyboard()
+        
     }
     
     //-----------------------------
@@ -39,13 +42,36 @@ final class RegisterViewController: BaseViewController {
         if let email = emailTextField.text, let password = passwordTextField.text, let fullName = fullNameTextField.text {
             Auth.auth().createUser(withEmail: email, password: password){_, error in
                 if let error{
-                    self.alertMessage(alertTitle: "Error", alertMesssage: error.localizedDescription)
+                    self.alertMessage(alertTitle: "Error", alertMesssage: error.localizedDescription, completionHandler: nil)
+                  //  self.alertMessage(alertTitle: "Error", alertMesssage: error.localizedDescription)
                 }else{
-                    self.alertMessage(alertTitle: "Success", alertMesssage: "Registration successed! You can return to the login screen by pressing the 'Login' button below.")
+                    
+                    //MARK: - Firestore
+                    let uuid = UUID().uuidString
+                    let docData : [String : Any] = [FirestoreConstants.uuid : uuid,
+                                                    FirestoreConstants.email : email,
+                                                    FirestoreConstants.fullName : fullName
+                    ]
+                    
+                    Firestore.firestore().collection(FirestoreConstants.collectionName).document(uuid).setData(docData){ error in
+                        if let error {
+                         print(error)
+                        } else {
+                            self.alertMessage(alertTitle: "Congratulations", alertMesssage: "You have successfully registered."){
+                                /*
+                                let loginVC = LoginViewController()
+                                loginVC.modalPresentationStyle = .fullScreen
+                                loginVC.isModalInPresentation = true
+                                self.navigationController?.pushViewController(loginVC, animated: true)
+                                 */
+                                self.dismiss(animated: true)
+                            }
+                        }
+                    }
                 }
             }
         }else {
-            self.alertMessage(alertTitle: "Error", alertMesssage: "Please fill all the necessary parts!")
+            self.alertMessage(alertTitle: "Error", alertMesssage: "Please fill all the necessary parts!", completionHandler: nil)
         }
     }
     
