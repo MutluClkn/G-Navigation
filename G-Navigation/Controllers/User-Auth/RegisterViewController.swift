@@ -43,27 +43,20 @@ final class RegisterViewController: BaseViewController {
             Auth.auth().createUser(withEmail: email, password: password){_, error in
                 if let error{
                     self.alertMessage(alertTitle: "Error", alertMesssage: error.localizedDescription, completionHandler: nil)
-                  //  self.alertMessage(alertTitle: "Error", alertMesssage: error.localizedDescription)
                 }else{
                     
                     //MARK: - Firestore
                     let uuid = UUID().uuidString
-                    let docData : [String : Any] = [FirestoreConstants.uuid : uuid,
-                                                    FirestoreConstants.email : email,
-                                                    FirestoreConstants.fullName : fullName
+                    let docData : [String : Any] = [FirebaseConstants.uuid : uuid,
+                                                    FirebaseConstants.email : email,
+                                                    FirebaseConstants.fullName : fullName
                     ]
                     
-                    Firestore.firestore().collection(FirestoreConstants.collectionName).document(uuid).setData(docData){ error in
+                    Firestore.firestore().collection(FirebaseConstants.collectionName).document(uuid).setData(docData){ error in
                         if let error {
                          print(error)
                         } else {
                             self.alertMessage(alertTitle: "Congratulations", alertMesssage: "You have successfully registered."){
-                                /*
-                                let loginVC = LoginViewController()
-                                loginVC.modalPresentationStyle = .fullScreen
-                                loginVC.isModalInPresentation = true
-                                self.navigationController?.pushViewController(loginVC, animated: true)
-                                 */
                                 self.dismiss(animated: true)
                             }
                         }

@@ -7,10 +7,14 @@
 
 //MARK: - Frameworks
 import UIKit
+import FirebaseFirestore
+import FirebaseAuth
 
 //MARK: - StartViewController
 final class StartViewController: UIViewController {
 
+    @IBOutlet weak var infoLabel: UILabel!
+    
     //-----------------------------
     //MARK: - Lifecycle
     //-----------------------------
@@ -18,6 +22,7 @@ final class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fetchUserName()
     }
     
     
@@ -33,6 +38,29 @@ final class StartViewController: UIViewController {
         let storyBoard : UIStoryboard = UIStoryboard(name: StoryboardConstants.main, bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: StoryboardConstants.licenseVC) as! LicenseViewController
         self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    
+    
+    //-----------------------------
+    //MARK: - Methods
+    //-----------------------------
+    
+    private func fetchUserName(){
+        Firestore.firestore().collection(FirebaseConstants.collectionName).addSnapshotListener { querySnapshot, error in
+            if let error {
+                print(error)
+            }
+            if querySnapshot?.isEmpty != true && querySnapshot != nil {
+                for doc in querySnapshot!.documents {
+                    if let email = doc.get(FirebaseConstants.email) as? String, let name = doc.get(FirebaseConstants.fullName) as? String {
+                        if email == Auth.auth().currentUser?.email {
+                            self.infoLabel.text = "Welcome \(name). We created a challenge for you. Press on the Start button when you are ready."
+                        }
+                    }
+                }
+            }
+        }
     }
     
 }
