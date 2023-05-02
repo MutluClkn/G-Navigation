@@ -20,7 +20,6 @@ final class MapViewController: BaseViewController {
     @IBOutlet weak var infoTableView: UITableView!
     @IBOutlet weak var lapseLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var frameView: UIView!
     
     
     //-----------------------------
@@ -63,14 +62,9 @@ final class MapViewController: BaseViewController {
         //Timer
         startTimer()
         
-        //Mapview Layer
-        self.mapView.layer.masksToBounds = true
-        self.mapView.layer.cornerRadius = 30
-        
-        //FrameView Layer
-        self.frameView.layer.masksToBounds = true
-        self.frameView.layer.cornerRadius = 35
-        
+        //MapView Height Constraint
+        mapView.frame.size.height = view.frame.size.height / 2
+
         //TableView
         self.infoTableView.dataSource = self
         self.infoTableView.delegate = self
@@ -196,7 +190,7 @@ final class MapViewController: BaseViewController {
     //-----------------------------
     
     //Give Up Button - Failure VC
-    @IBAction func giveUpBarButtonDidPress(_ sender: UIBarButtonItem) {
+    @IBAction func cancelChallengeButtonDidPress(_ sender: UIButton) {
         manager.stopUpdatingLocation()
         self.mapView.clear()
         self.succeedLocations = 0
@@ -206,12 +200,6 @@ final class MapViewController: BaseViewController {
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated:true, completion:nil)
     }
-    
-    //Google License
-    @IBAction func googleLicenseButtonDidPress(_ sender: UIButton) {
-        performSegue(withIdentifier: SegueConstants.toLicenseVC, sender: nil)
-    }
-    
 }
 
 

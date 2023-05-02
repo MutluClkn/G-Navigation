@@ -31,7 +31,7 @@ final class StartViewController: UIViewController {
     //-----------------------------
     
     @IBAction func startButtonDidPress(_ sender: UIButton) {
-        self.performSegue(withIdentifier: SegueConstants.toMapVC, sender: nil)
+        self.performSegue(withIdentifier: SegueConstants.startToMap, sender: nil)
     }
     
     @IBAction func googleLicenseButton(_ sender: UIButton) {
