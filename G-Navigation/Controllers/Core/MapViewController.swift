@@ -159,7 +159,6 @@ final class MapViewController: BaseViewController {
         }
     }
 
-
     private func stopTimer() {
         timer?.invalidate()
         self.lapTimes.append(self.timerLabel.text ?? "00:00:00")

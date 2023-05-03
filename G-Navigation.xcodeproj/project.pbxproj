@@ -24,6 +24,7 @@
 		FA865B0D297AB60D008077DA /* navigation.json in Resources */ = {isa = PBXBuildFile; fileRef = FA865B0C297AB60D008077DA /* navigation.json */; };
 		FAA623A929827A3200E00374 /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA623A829827A3200E00374 /* LicenseViewController.swift */; };
 		FAA623AB2982813F00E00374 /* StoryboardConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA623AA2982813F00E00374 /* StoryboardConstants.swift */; };
+		FAA679D72A023FF5007CAF67 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA679D62A023FF5007CAF67 /* UserDefaultsKeys.swift */; };
 		FAA70E98298A432A00B5EBEC /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA70E97298A432A00B5EBEC /* ServiceManager.swift */; };
 		FAAC4FA229EE671D003A6EBA /* FirebaseConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAC4FA129EE671D003A6EBA /* FirebaseConstants.swift */; };
 		FAACFCBE298123A200B779FC /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACFCBD298123A200B779FC /* FinishViewController.swift */; };
@@ -59,6 +60,7 @@
 		FA865B0C297AB60D008077DA /* navigation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = navigation.json; sourceTree = "<group>"; };
 		FAA623A829827A3200E00374 /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		FAA623AA2982813F00E00374 /* StoryboardConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardConstants.swift; sourceTree = "<group>"; };
+		FAA679D62A023FF5007CAF67 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		FAA70E97298A432A00B5EBEC /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		FAAC4FA129EE671D003A6EBA /* FirebaseConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseConstants.swift; sourceTree = "<group>"; };
 		FAACFCBD298123A200B779FC /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				FAACFCC529812A0C00B779FC /* AnimationConstants.swift */,
 				FAC6420C29BB1B2F0047865E /* CellConstants.swift */,
 				FAAC4FA129EE671D003A6EBA /* FirebaseConstants.swift */,
+				FAA679D62A023FF5007CAF67 /* UserDefaultsKeys.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0834A729CC4F7600C737F4 /* LoginViewController.swift in Sources */,
+				FAA679D72A023FF5007CAF67 /* UserDefaultsKeys.swift in Sources */,
 				FA865B0B297AB515008077DA /* NavigationData.swift in Sources */,
 				FAC6420B29BB19F90047865E /* InfoTableViewCell.swift in Sources */,
 				FAAC4FA229EE671D003A6EBA /* FirebaseConstants.swift in Sources */,
