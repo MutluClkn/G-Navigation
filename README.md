@@ -1,8 +1,3 @@
 # G-Navigation
 
-It is a navigation app that uses Google Maps SDK. There are 3 different locations that the user need to reach to complete the challenge. The finish screen will be pushed when the 3 target locations are completed in order.
-
-* The user's location is updated with every movement. 
-* The route is updated according to the user's updated location
-* The current target location is completed when there is a distance of 30 meters from the target location.
-* After completing a destination, an alert message pop-ups and the app loads the new target.
+Developed a navigation and location-tracking app using Swift and the Google Maps SDK, designed to guide users through multiple waypoints. The app leverages Core Location to track real-time user location, displaying their progress on a map with distinct markers for starting and ending points. Key features include a timer to measure elapsed time between locations, dynamic updating of the map view as users move, and an intuitive interface that shows completed destinations in a list format.
